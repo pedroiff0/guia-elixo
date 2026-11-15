@@ -1,422 +1,539 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Pra onde vai a bateria que chegou ao fim? | Guia de Descarte IFF</title>
-  <meta name="description" content="Guia de descarte de baterias e lixo eletrônico em Bom Jesus do Itabapoana. Consulta rápida para celular, normas e PEV IFF.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Guia de Descarte de Resíduos Eletroeletrônicos e Baterias (E-Lixo) · IFF</title>
+  <meta name="description" content="Guia rápido e interativo para descarte seguro de eletrônicos, baterias e pilhas em Bom Jesus do Itabapoana e região. Conheça as leis, normas e o projeto PEV no IFF.">
+  <link rel="canonical" href="https://elixo.phrandrade.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  
   <style>
     :root {
-      --primary: #155724;
-      --primary-dark: #0c3315;
-      --primary-light: #1e7e34;
-      --primary-subtle: #eaf5eb;
-      --accent: #28a745;
-      --bg: #f4f7f4;
-      --surface: #ffffff;
-      --text: #1b241b;
-      --text-muted: #495449;
-      --border: #d2ded2;
-      --danger: #b30000;
+      --iff-primary: #1b5e20;
+      --iff-primary-dark: #0d3311;
+      --iff-primary-light: #2e7d32;
+      --iff-accent: #388e3c;
+      --iff-bg-soft: #f4f7f4;
+      --danger: #b71c1c;
       --danger-bg: #fdf2f2;
-      --warning: #b25900;
-      --warning-bg: #fef7ee;
-      --radius: 12px;
-      --radius-sm: 8px;
-      --shadow: 0 2px 8px rgba(0, 20, 5, 0.06);
-      --shadow-hover: 0 4px 14px rgba(0, 20, 5, 0.1);
+      --warning: #b26a00;
+      --warning-bg: #fff8e1;
+      --success: #1b5e20;
+      --success-bg: #e8f5e9;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border: #d1d5db;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--iff-bg-soft);
+      color: var(--text-main);
       line-height: 1.5;
       padding-bottom: 5rem;
+      font-size: 15px;
     }
 
-    .svg-icon {
-      width: 1.15rem;
-      height: 1.15rem;
-      stroke-width: 2;
-      stroke: currentColor;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      display: inline-block;
-      vertical-align: middle;
-      flex-shrink: 0;
-    }
-
-    /* Compact Mobile Header */
-    header.mobile-header {
-      background: var(--primary-dark);
+    .app-header {
+      background: linear-gradient(135deg, var(--iff-primary-dark), var(--iff-primary));
       color: #ffffff;
-      padding: 1.25rem 1rem 1rem;
-      border-bottom: 3px solid var(--accent);
-    }
-    .header-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(255, 255, 255, 0.14);
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      margin-bottom: 0.6rem;
-      color: #d4ebd5;
-    }
-    header.mobile-header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.45rem;
-      line-height: 1.2;
-      letter-spacing: -0.3px;
-      margin-bottom: 0.35rem;
-    }
-    header.mobile-header p {
-      font-size: 0.85rem;
-      color: #c4dcc5;
-      line-height: 1.35;
-    }
-
-    /* Sticky Search & Filter Bar (Priority on Screen) */
-    .search-section {
+      padding: 1.2rem 1rem 1rem 1rem;
       position: sticky;
       top: 0;
-      z-index: 99;
-      background: var(--surface);
-      padding: 0.85rem 1rem 0.75rem;
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .search-box {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .search-box .search-icon {
-      position: absolute;
-      left: 0.85rem;
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    .search-box input {
-      width: 100%;
-      height: 46px;
-      padding: 0 2.4rem 0 2.5rem;
-      font-size: 0.95rem;
-      font-family: inherit;
-      border: 2px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: #fafcfa;
-      outline: none;
-      transition: all 0.2s;
-    }
-    .search-box input:focus {
-      border-color: var(--primary);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
-    }
-    .search-clear {
-      position: absolute;
-      right: 0.6rem;
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      padding: 0.4rem;
-      cursor: pointer;
-      display: none;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* Category Chips Carousel */
-    .chips-carousel {
-      display: flex;
-      gap: 0.45rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      margin-top: 0.65rem;
-      padding-bottom: 0.2rem;
-    }
-    .chips-carousel::-webkit-scrollbar { display: none; }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.4rem 0.8rem;
-      background: var(--primary-subtle);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .chip:active, .chip.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    /* Main Container */
-    main {
-      padding: 1rem;
-      max-width: 900px;
+    .header-content {
+      max-width: 760px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
-    /* Security Checklist Box */
-    .checklist-box {
-      background: #fdfefe;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-    .checklist-title {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 0.65rem;
-    }
-    .checklist-items {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .check-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.45rem;
-      line-height: 1.35;
-    }
-    .check-row .svg-icon {
-      color: var(--accent);
-      margin-top: 0.1rem;
-    }
-
-    /* Product Cards */
-    .results-count {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
+    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .product-list {
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .header-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .header-icon-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .app-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .app-subtitle {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0.9rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    .product-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.15rem;
-      box-shadow: var(--shadow);
+
+    .search-container {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .search-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .category-chips {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      scrollbar-width: none;
+    }
+
+    .category-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip-btn {
+      white-space: nowrap;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .chip-btn.active {
+      background: var(--iff-primary);
+      color: #ffffff;
+      border-color: var(--iff-primary);
+    }
+
+    .results-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.2rem;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .item-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
     }
-    .card-top {
+
+    .item-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 0.5rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 0.45rem;
     }
-    .card-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-    }
-    .badge-baterias { background: #ffebee; color: var(--danger); }
-    .badge-pilhas { background: #fff3e0; color: var(--warning); }
-    .badge-celulares { background: #e8f5e9; color: var(--primary); }
-    .badge-informatica { background: #e3f2fd; color: #0d47a1; }
-    .badge-eletro { background: #ede7f6; color: #4a148c; }
 
-    .product-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--primary-dark);
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--iff-primary-dark);
       line-height: 1.3;
     }
-    .card-risk-alert {
-      background: var(--danger-bg);
-      border-left: 3px solid var(--danger);
-      padding: 0.5rem 0.65rem;
+
+    .category-badge {
+      font-size: 0.68rem;
+      padding: 0.15rem 0.5rem;
       border-radius: 4px;
-      font-size: 0.8rem;
-      color: #4a0000;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #e2e8f0;
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    .info-block {
       display: flex;
-      gap: 0.4rem;
-      line-height: 1.35;
-    }
-    .card-block {
-      background: #fafbfa;
-      border: 1px solid var(--border);
+      flex-direction: column;
+      gap: 0.2rem;
+      font-size: 0.85rem;
+      padding: 0.5rem 0.7rem;
       border-radius: var(--radius-sm);
-      padding: 0.65rem 0.8rem;
-      font-size: 0.82rem;
     }
-    .block-label {
+
+    .info-label {
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .card-dest {
-      background: var(--primary-subtle);
-      border: 1px solid #cce3cd;
-      border-radius: var(--radius-sm);
-      padding: 0.75rem 0.8rem;
-      font-size: 0.84rem;
-      color: var(--primary-dark);
-    }
-    .card-dest strong {
-      display: block;
-      color: var(--primary);
-      font-size: 0.88rem;
-      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
       display: flex;
       align-items: center;
       gap: 0.35rem;
     }
 
-    /* Section Expandable Toggles */
-    .accordion-section {
-      margin-top: 2rem;
-      border-top: 2px solid var(--border);
-      padding-top: 1.5rem;
+    .info-block.risk {
+      background-color: var(--danger-bg);
+      border-left: 3px solid var(--danger);
+      color: #7f1d1d;
     }
+
+    .info-block.risk .info-label {
+      color: var(--danger);
+    }
+
+    .info-block.prep {
+      background-color: var(--warning-bg);
+      border-left: 3px solid var(--warning);
+      color: #78350f;
+    }
+
+    .info-block.prep .info-label {
+      color: var(--warning);
+    }
+
+    .info-block.dest {
+      background-color: var(--success-bg);
+      border-left: 3px solid var(--success);
+      color: #14532d;
+    }
+
+    .info-block.dest .info-label {
+      color: var(--success);
+    }
+
+    .info-source {
+      font-size: 0.72rem;
+      color: #64748b;
+      margin-top: 0.1rem;
+      font-style: italic;
+    }
+
+    .accordion-section {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
     .accordion-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--iff-primary-dark);
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
     }
+
     .accordion-desc {
       font-size: 0.84rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
-    /* Legislation Cards */
     .law-item {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      margin-bottom: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      margin-bottom: 0.65rem;
+      background: #fafbfa;
     }
+
+    .law-item:last-child {
+      margin-bottom: 0;
+    }
+
     .law-item h4 {
-      font-size: 0.95rem;
-      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
     }
+
     .law-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .law-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .law-item-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--iff-primary);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .law-item-btn.secondary {
+      background: #475569;
+    }
+
+    .law-item-btn:hover {
+      background: var(--iff-primary-dark);
+    }
+
+    .project-card {
+      border-left: 3px solid var(--iff-primary);
+      background: #f8fafc;
+      padding: 0.75rem 0.85rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 0.65rem;
+    }
+
+    .project-card h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--iff-primary-dark);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .project-card p {
       font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.4;
     }
-    .law-item-btn {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.45rem 0.85rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #ffffff;
-      background: var(--primary);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      margin-top: 0.3rem;
-    }
 
-    /* Project IFF & Bastão */
-    .project-card {
-      background: #fafdfa;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.15rem;
-      margin-bottom: 1rem;
-    }
-    .project-card h4 {
-      font-size: 1rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .project-card p {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* Authors Minimal Grid */
-    .authors-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.65rem;
-    }
-    @media (max-width: 480px) {
-      .authors-container { grid-template-columns: 1fr; }
-    }
-    .author-item {
-      background: var(--surface);
+    /* MAPA REGIONAL IFF */
+    .map-container {
+      background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .map-svg-wrap {
+      width: 100%;
+      background: #eef5ee;
+      padding: 1rem 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .map-svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .map-legend {
       padding: 0.75rem;
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .campi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .campus-card {
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 0.65rem;
+      background: #fafbfa;
       font-size: 0.8rem;
     }
-    .author-item strong {
-      display: block;
-      color: var(--primary-dark);
-      font-size: 0.85rem;
+
+    .campus-card.highlight {
+      border-color: var(--iff-primary);
+      background: #f0fdf4;
     }
-    .author-item span {
-      color: var(--accent);
-      font-size: 0.72rem;
+
+    .campus-card strong {
       display: block;
+      color: var(--iff-primary-dark);
+      font-size: 0.84rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .campus-card span {
+      color: var(--text-muted);
+      display: block;
+      line-height: 1.3;
+    }
+
+    /* CARDS ESTILO MIDDLE-EARTH */
+    .authors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .author-card-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 0.6rem;
+      text-align: center;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .author-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--iff-primary);
       margin-bottom: 0.2rem;
     }
-    .author-item a {
+
+    .author-name {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--iff-primary-dark);
+      line-height: 1.2;
+    }
+
+    .author-role {
+      font-size: 0.72rem;
       color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .author-email {
+      font-size: 0.7rem;
+      color: var(--iff-primary);
+      text-decoration: underline;
       word-break: break-all;
     }
 
-    /* Bottom Navigation Bar (Mobile App Style) */
+    .stack-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .stack-table th, .stack-table td {
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+
+    .stack-table th {
+      background: #f1f5f9;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* MOBILE BOTTOM TAB BAR */
     .mobile-tab-bar {
       position: fixed;
       bottom: 0;
@@ -426,167 +543,283 @@
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-around;
-      padding: 0.5rem 0.25rem 0.6rem;
-      z-index: 100;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+      padding: 0.45rem 0.2rem;
+      z-index: 999;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     }
+
     .tab-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.2rem;
-      color: var(--text-muted);
-      text-decoration: none;
       font-size: 0.68rem;
-      font-weight: 600;
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-sm);
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 500;
+      flex: 1;
+      text-align: center;
     }
-    .tab-item.active, .tab-item:active {
-      color: var(--primary);
+
+    .tab-item.active {
+      color: var(--iff-primary);
+      font-weight: 600;
+    }
+
+    .svg-icon {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (min-width: 768px) {
+      .app-title { font-size: 1.45rem; }
+      body { padding-bottom: 2rem; }
+      .mobile-tab-bar { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Compacto -->
-  <header class="mobile-header">
-    <div class="header-pill">
-      <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      IFF Bom Jesus do Itabapoana
+  <!-- TOPO DA APLICAÇÃO -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="header-top">
+        <span class="header-badge">
+          <svg class="svg-icon" style="width: 13px; height: 13px;" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          IFF BJI · Eng. Computação
+        </span>
+        <div class="header-links">
+          <a href="https://elixo.phrandrade.com" class="header-icon-btn" title="Site Oficial elixo.phrandrade.com">
+            <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+          <a href="https://github.com/pedroiff0/guia-elixo" target="_blank" rel="noopener" class="header-icon-btn" title="Código-Fonte no GitHub">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://portfolio.phrandrade.com" target="_blank" rel="noopener" class="header-icon-btn" title="Portfólio">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+        </div>
+      </div>
+      <h1 class="app-title">Guia de Descarte de E-Lixo e Baterias</h1>
+      <p class="app-subtitle">Pra onde vai a bateria que chegou ao fim? Catálogo técnico, neutralização de riscos e triagem regional.</p>
     </div>
-    <h1>Pra onde vai a bateria que chegou ao fim?</h1>
-    <p>Consulte como preparar e onde entregar pilhas, baterias e eletroeletrônicos em Bom Jesus do Itabapoana.</p>
   </header>
 
-  <!-- Sticky Search & Quick Filter (De Cara na Tela) -->
-  <div class="search-section" id="busca-rapida">
-    <div class="search-box">
-      <svg class="svg-icon search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="search" id="searchInput" placeholder="O que você quer descartar? Digite aqui..." autocomplete="off">
-    </div>
-    <div class="chips-carousel">
-      <button class="chip active" data-cat="all">
-        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        Todos
-      </button>
-      <button class="chip" data-cat="baterias">
-        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
-        Baterias
-      </button>
-      <button class="chip" data-cat="pilhas">
-        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M16 2v4M8 2v4M3 6h18v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z"/></svg>
-        Pilhas
-      </button>
-      <button class="chip" data-cat="celulares">
-        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        Celulares
-      </button>
-      <button class="chip" data-cat="informatica">
-        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-        Informática
-      </button>
-      <button class="chip" data-cat="eletro">
-        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Eletrodomésticos
-      </button>
-    </div>
-  </div>
+  <main class="container">
 
-  <main>
+    <!-- BUSCA RÁPIDA -->
+    <div class="search-container" id="busca-rapida">
+      <svg class="svg-icon" style="color: #64748b;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" class="search-input" placeholder="O que você quer descartar? (ex: celular, pilha, fonte, cabo...)" autocomplete="off">
+    </div>
 
-    <!-- Checklist de Segurança -->
-    <div class="checklist-box">
-      <div class="checklist-title">
-        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Regras de Segurança Antes de Levar
+    <!-- CHIPS DE FILTRO POR CATEGORIA -->
+    <div class="category-chips">
+      <button class="chip-btn active" data-cat="todas">Todas</button>
+      <button class="chip-btn" data-cat="baterias">Baterias</button>
+      <button class="chip-btn" data-cat="pilhas">Pilhas</button>
+      <button class="chip-btn" data-cat="celulares">Celulares &amp; Telefonia</button>
+      <button class="chip-btn" data-cat="informatica">Informática &amp; Peças</button>
+      <button class="chip-btn" data-cat="eletro">Eletrodomésticos</button>
+      <button class="chip-btn" data-cat="lampadas">Lâmpadas</button>
+    </div>
+
+    <!-- CONTAGEM DE RESULTADOS -->
+    <div class="results-info">
+      <span id="results-count">Exibindo todos os 34 itens cadastrados</span>
+      <span style="font-size: 0.75rem; color: #94a3b8;">Base técnica: CONAMA, PNRS e INEA</span>
+    </div>
+
+    <!-- LISTA DE CARDS REATIVOS -->
+    <div class="card-list" id="items-container"></div>
+
+    <!-- SEÇÃO MAPA REGIONAL IFF -->
+    <div class="accordion-section" id="mapa">
+      <div class="accordion-title">
+        <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        Mapa Regional dos Campi do IFF &amp; Eixo Logístico
       </div>
-      <div class="checklist-items">
-        <div class="check-row">
-          <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          <span><strong>Isolar os polos:</strong> passe fita adesiva nos contatos de baterias e pilhas avulsas.</span>
+      <p class="accordion-desc">Visualização territorial do fluxo de logística reversa: da triagem primária em Bom Jesus do Itabapoana até o polo de desmonte e reciclagem do Circuito Verde em Campos dos Goytacazes.</p>
+
+      <div class="map-container">
+        <div class="map-svg-wrap">
+          <svg class="map-svg" viewBox="0 0 540 280" width="100%">
+            <!-- Fundo Esquemático do Noroeste e Norte Fluminense -->
+            <rect width="540" height="280" fill="#f8fafc" rx="8"/>
+            
+            <!-- Manchas regionais -->
+            <path d="M 40,30 Q 180,20 260,80 Q 220,170 120,160 Z" fill="#dcfce7" stroke="#86efac" stroke-width="1.5" opacity="0.7"/>
+            <text x="60" y="55" font-size="11" font-weight="700" fill="#166534" font-family="sans-serif">NOROESTE FLUMINENSE</text>
+            
+            <path d="M 260,80 Q 420,50 500,120 Q 480,240 280,220 Q 220,170 260,80 Z" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5" opacity="0.7"/>
+            <text x="350" y="80" font-size="11" font-weight="700" fill="#3730a3" font-family="sans-serif">NORTE FLUMINENSE</text>
+
+            <!-- Rio Itabapoana esquemático -->
+            <path d="M 30,70 Q 90,85 160,95 T 260,110" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4,2"/>
+            <text x="50" y="105" font-size="9" fill="#0284c7" font-style="italic" font-family="sans-serif">Rio Itabapoana (Divisa RJ/ES)</text>
+
+            <!-- Rota Rodoviária BJI <-> Guarus (67 km) -->
+            <path d="M 120,90 Q 210,130 350,150" fill="none" stroke="#b91c1c" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M 120,90 Q 210,130 350,150" fill="none" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <rect x="180" y="132" width="124" height="22" rx="4" fill="#ffffff" stroke="#b91c1c" stroke-width="1"/>
+            <text x="186" y="147" font-size="9.5" font-weight="700" fill="#991b1b" font-family="sans-serif">Rota Homologada: 67 km</text>
+
+            <!-- Ponto 1: IFF Campus Bom Jesus do Itabapoana -->
+            <g transform="translate(120, 90)">
+              <circle r="14" fill="#22c55e" opacity="0.3"/>
+              <circle r="8" fill="#15803d"/>
+              <circle r="4" fill="#ffffff"/>
+              <rect x="-80" y="-36" width="160" height="26" rx="4" fill="#ffffff" stroke="#15803d" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+              <text x="0" y="-23" font-size="9.5" font-weight="700" fill="#14532d" text-anchor="middle" font-family="sans-serif">IFF Campus Bom Jesus</text>
+              <text x="0" y="-13" font-size="8" fill="#475569" text-anchor="middle" font-family="sans-serif">PEV e Triagem Primaria</text>
+            </g>
+
+            <!-- Ponto 2: IFF Campus Guarus (Circuito Verde) -->
+            <g transform="translate(350, 150)">
+              <circle r="16" fill="#3b82f6" opacity="0.3"/>
+              <circle r="9" fill="#1d4ed8"/>
+              <circle r="4" fill="#ffffff"/>
+              <rect x="-85" y="14" width="170" height="28" rx="4" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+              <text x="0" y="27" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IFF Campus Guarus (Campos)</text>
+              <text x="0" y="38" font-size="8" font-weight="600" fill="#166534" text-anchor="middle" font-family="sans-serif">Projeto Circuito Verde (Destino)</text>
+            </g>
+
+            <!-- Ponto 3: IFF Campus Campos Centro -->
+            <g transform="translate(370, 185)">
+              <circle r="6" fill="#64748b"/>
+              <text x="382" y="189" font-size="8.5" fill="#334155" font-weight="600" font-family="sans-serif">IFF Campos Centro</text>
+            </g>
+
+            <!-- Outros Campi Vizinhos -->
+            <g transform="translate(100, 140)">
+              <circle r="5" fill="#94a3b8"/>
+              <text x="110" y="144" font-size="8" fill="#475569" font-family="sans-serif">IFF Itaperuna</text>
+            </g>
+            <g transform="translate(60, 175)">
+              <circle r="5" fill="#94a3b8"/>
+              <text x="70" y="179" font-size="8" fill="#475569" font-family="sans-serif">IFF S. A. de Pádua</text>
+            </g>
+            <g transform="translate(160, 170)">
+              <circle r="5" fill="#94a3b8"/>
+              <text x="170" y="174" font-size="8" fill="#475569" font-family="sans-serif">IFF Cambuci</text>
+            </g>
+            <g transform="translate(430, 210)">
+              <circle r="5" fill="#94a3b8"/>
+              <text x="440" y="214" font-size="8" fill="#475569" font-family="sans-serif">IFF São João da Barra</text>
+            </g>
+          </svg>
         </div>
-        <div class="check-row">
-          <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          <span><strong>Nunca furar:</strong> baterias de lítio pegam fogo instantaneamente ao serem amassadas.</span>
-        </div>
-        <div class="check-row">
-          <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          <span><strong>Apagar dados:</strong> restaure celulares e computadores para os padrões de fábrica.</span>
+
+        <div class="map-legend">
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+            <strong>O Eixo da Proposta:</strong> A rota de 67 km interliga o ponto de coleta de Bom Jesus do Itabapoana diretamente às oficinas especializadas do Campus Guarus, garantindo destinação ambientalmente homologada com Manifesto de Transporte de Resíduos (Sistema MTR do INEA).
+          </div>
+
+          <div class="campi-grid">
+            <div class="campus-card highlight">
+              <strong>IFF Campus Bom Jesus do Itabapoana</strong>
+              <span>Origem: PEV comunitário com triagem rápida sem desmonte (Resolução INEA 183/2019).</span>
+            </div>
+            <div class="campus-card highlight">
+              <strong>IFF Campus Guarus (Campos dos Goytacazes)</strong>
+              <span>Destino: Projeto Circuito Verde, responsável pelo desmonte técnico, pesagem e envio a recicladoras parceiras.</span>
+            </div>
+            <div class="campus-card">
+              <strong>IFF Campus Itaperuna &amp; Noroeste</strong>
+              <span>Pólos de apoio regional para extensão e expansão futura da malha de coleta escolar.</span>
+            </div>
+            <div class="campus-card">
+              <strong>CTR Campos (Aterro Consorciado)</strong>
+              <span>Destino oficial do lixo comum municipal pelo PMGIRS (para onde NÃO devem ir eletrônicos e baterias).</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Resultados dos Produtos -->
-    <div class="results-count">
-      <span>Itens cadastrados para consulta</span>
-      <span id="counterLabel">8 itens</span>
-    </div>
-
-    <div class="product-list" id="productList">
-      <!-- Renderizado via JS -->
-    </div>
-
-    <!-- SEÇÃO LEGISLAÇÕES E PDFS -->
+    <!-- SEÇÃO LEGISLAÇÕES E DOCUMENTOS NORMATIVOS -->
     <div class="accordion-section" id="legislacoes">
       <div class="accordion-title">
-        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        Legislações e Normas Oficiais
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Legislação, Resoluções &amp; Planos Municipais
       </div>
-      <p class="accordion-desc">Documentos que fundamentam a logística reversa, limites de metais pesados e o diagnóstico municipal.</p>
+      <p class="accordion-desc">Documentos normativos que regem a logística reversa, limites toxicológicos e a gestão de resíduos sólidos.</p>
 
       <div class="law-item">
         <h4>Lei Federal n.º 12.305/2010 (PNRS)</h4>
-        <p>Política Nacional de Resíduos Sólidos: determina a responsabilidade compartilhada pelo ciclo de vida entre comércio, fabricantes e poder público.</p>
-        <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Acessar Texto no Planalto
-        </a>
+        <p>Institui a Política Nacional de Resíduos Sólidos e fixa a responsabilidade compartilhada pelo ciclo de vida dos produtos entre poder público, empresas e cidadãos.</p>
+        <div class="law-links-row">
+          <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Texto Oficial no Planalto
+          </a>
+        </div>
       </div>
 
       <div class="law-item">
         <h4>Decreto Federal n.º 10.240/2020</h4>
-        <p>Regulamenta a logística reversa obrigatória de eletroeletrônicos e componentes de uso doméstico em todo o país.</p>
-        <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10240.htm" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Acessar Decreto
-        </a>
+        <p>Regulamenta a logística reversa de produtos eletroeletrônicos e componentes de uso doméstico, fixando metas obrigatórias de implantação de pontos de coleta.</p>
+        <div class="law-links-row">
+          <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10240.htm" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Texto Oficial no Planalto
+          </a>
+        </div>
       </div>
 
       <div class="law-item">
         <h4>Resolução CONAMA n.º 401/2008</h4>
-        <p>Limites de chumbo, cádmio e mercúrio para pilhas e baterias; obriga lojas que as comercializam a aceitar o retorno das usadas.</p>
-        <a href="https://cetesb.sp.gov.br/wp-content/uploads/2021/04/resolucao-conama-401-2008.pdf" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Baixar PDF CONAMA
-        </a>
+        <p>Fixa teores máximos de chumbo, cádmio e mercúrio para pilhas e baterias, e obriga a devolução pós-consumo aos fabricantes e comerciantes.</p>
+        <div class="law-links-row">
+          <a href="docs/leis/resolucao-conama-401-2008.pdf" target="_blank" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Baixar PDF Oficial
+          </a>
+          <a href="https://www.legisweb.com.br/legislacao/?id=72929" target="_blank" rel="noopener" class="law-item-btn secondary">
+            Consulta LegisWeb
+          </a>
+        </div>
       </div>
 
       <div class="law-item">
-        <h4>Resolução INEA n.º 183/2019 (RJ)</h4>
-        <p>Dispensa licenciamento ambiental para Pontos de Entrega Voluntária (PEV) de triagem rápida sem desmonte no local.</p>
-        <a href="http://www.inea.rj.gov.br/wp-content/uploads/2019/07/Resolucao-INEA-n-183-de-10-de-julho-de-2019.pdf" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Baixar PDF INEA
-        </a>
+        <h4>Resolução INEA n.º 183/2019 (Estado do Rio de Janeiro)</h4>
+        <p>Dispensa licenciamento ambiental para Pontos de Entrega Voluntária (PEV) de logística reversa que realizem triagem limpa sem desmonte industrial.</p>
+        <div class="law-links-row">
+          <a href="docs/leis/resolucao-inea-183-2019.pdf" target="_blank" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Baixar PDF Oficial
+          </a>
+          <a href="https://www.legisweb.com.br/legislacao/?id=388039" target="_blank" rel="noopener" class="law-item-btn secondary">
+            Consulta LegisWeb
+          </a>
+        </div>
       </div>
 
       <div class="law-item">
         <h4>PMGIRS Bom Jesus do Itabapoana (2024)</h4>
-        <p>Diagnóstico municipal oficial: atesta a inexistência de aterro sanitário próprio, geração per capita de 0,724 kg/hab/dia e transbordo rodoviário por 67 km até o CTR Campos.</p>
-        <a href="https://bomjesus.rj.gov.br/uploads/35604723c1c66d245da60cca87be151183752862.pdf" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Baixar PDF PMGIRS Bom Jesus
-        </a>
+        <p>Diagnóstico municipal oficial: inexistência de aterro sanitário próprio, geração de 0,724 kg/hab/dia e transbordo por 67 km de rodovia até Campos.</p>
+        <div class="law-links-row">
+          <a href="https://bomjesus.rj.gov.br/uploads/35604723c1c66d245da60cca87be151183752862.pdf" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Baixar PDF PMGIRS Bom Jesus
+          </a>
+        </div>
       </div>
 
       <div class="law-item">
         <h4>PMGIRS Campos dos Goytacazes (2024)</h4>
-        <p>Plano Municipal de Gestão Integrada: diretrizes de logística reversa e regulação do aterro sanitário consorciado CTR Campos.</p>
-        <a href="https://campos.rj.gov.br/wp-content/uploads/2026/08/residuos_solidos-versao_final_pmgirs.pdf" target="_blank" rel="noopener" class="law-item-btn">
-          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Baixar PDF PMGIRS Campos
-        </a>
+        <p>Plano Municipal de Gestão Integrada: regulação do aterro consorciado CTR Campos e diretrizes de logística reversa na Bacia Norte Fluminense.</p>
+        <div class="law-links-row">
+          <a href="https://campos.rj.gov.br/wp-content/uploads/2026/08/residuos_solidos-versao_final_pmgirs.pdf" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Baixar PDF PMGIRS Campos
+          </a>
+        </div>
       </div>
     </div>
 
@@ -594,114 +827,157 @@
     <div class="accordion-section" id="projeto">
       <div class="accordion-title">
         <svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        O Projeto no IFF &amp; Circuito Verde
+        O Projeto Institucional no IFF &amp; Circuito Verde
       </div>
-      <p class="accordion-desc">Estruturação institucional da proposta no Campus Bom Jesus do Itabapoana.</p>
+      <p class="accordion-desc">Estrutura operacional e integração técnica entre os cursos do campus Bom Jesus e o polo de Guarus.</p>
 
       <div class="project-card">
         <h4>
           <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          PEV no IFF &amp; Triagem Rápida
+          PEV no IFF &amp; Triagem Primária Segura
         </h4>
-        <p>O ponto recebe eletrônicos e baterias, separando itens funcionais para doação e sucata para transporte homologado até o projeto Circuito Verde no IFF Campus Guarus.</p>
+        <p>O ponto recebe eletrônicos, pilhas e baterias em recipientes estanques e protegidos de chuva e sol. Separa peças funcionais para uso escolar e lotes de sucata para transporte homologado.</p>
       </div>
 
       <div class="project-card">
         <h4>
           <svg class="svg-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Passada de Bastão: Eng. Computação &amp; Meio Ambiente
+          Passada de Bastão: Engenharia &amp; Meio Ambiente
         </h4>
-        <p>A Engenharia de Computação modela a estrutura técnica, o fluxo e o sistema web. O curso técnico em Meio Ambiente assume a rotina de conscientização escolar e o monitoramento ambiental continuado.</p>
+        <p>A Engenharia de Computação modelou a arquitetura do fluxo técnico e a plataforma web. O curso Técnico em Meio Ambiente assume a rotina operacional continuada, as campanhas escolares e o acompanhamento dos indicadores na bacia do Rio Itabapoana.</p>
       </div>
     </div>
 
-    <!-- SEÇÃO DOCUMENTOS DA TRÍADE -->
+    <!-- SEÇÃO DOCUMENTOS ACADÊMICOS -->
     <div class="accordion-section" id="documentos">
       <div class="accordion-title">
         <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         Documentos Acadêmicos do Trabalho
       </div>
-      <p class="accordion-desc">Tríade documental compilada via ReLaTeX (Relatório Técnico ABNT, Slides da Apresentação e Roteiro de Oratória com timing).</p>
+      <p class="accordion-desc">Conjunto documental compilado no sistema ReLaTeX (Relatório Técnico ABNT, Slides, Roteiro e Panfleto A4).</p>
 
-      <div style="padding: 1rem; background: #fafbfa; border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: left; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-        <div style="font-weight: 600; color: var(--iff-primary); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+      <div style="padding: 0.9rem; background: #fafbfa; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+        <div style="font-weight: 600; color: var(--iff-primary); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
           <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          Em Avaliação Acadêmica
+          Em Avaliação Acadêmica pela Banca
         </div>
-        <p style="margin: 0 0 0.6rem 0;">Os arquivos completos em PDF (Relatório Técnico, Slides e Roteiro da Apresentação) estão sob avaliação na banca da disciplina. O acesso público integral será liberado após a apresentação oficial no portfólio acadêmico.</p>
-        <a href="https://phrandrade.com" target="_blank" rel="noopener" class="law-item-btn" style="width: 100%; justify-content: center; padding: 0.65rem;">
+        <p style="margin: 0 0 0.65rem 0;">Os arquivos completos em PDF (Relatório Técnico de 18 páginas, 36 Slides da Apresentação, Roteiro de Oratória e Panfleto A4) foram submetidos para defesa oficial. O acesso público integral será liberado após a apresentação da disciplina no portfólio oficial.</p>
+        <a href="https://portfolio.phrandrade.com" target="_blank" rel="noopener" class="law-item-btn" style="width: 100%; justify-content: center; padding: 0.65rem;">
           <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Acompanhar no Portfólio (phrandrade.com)
+          Acompanhar no Portfólio (portfolio.phrandrade.com)
         </a>
       </div>
     </div>
 
-    <!-- SEÇÃO AUTORES -->
+    <!-- SEÇÃO AUTORES & EQUIPE (ESTILO MIDDLE-EARTH) -->
     <div class="accordion-section" id="autores">
       <div class="accordion-title">
         <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         Autores &amp; Orientação
       </div>
-      <p class="accordion-desc">Equipe da disciplina Filosofia da Ciência e Tecnologia (Engenharia de Computação, IFF BJI).</p>
+      <p class="accordion-desc">Equipe discente e docente da disciplina Filosofia da Ciência e Tecnologia (Engenharia de Computação, IFF BJI).</p>
 
-      <div class="authors-container">
-        <div class="author-item">
-          <strong>Bento Fernandes da Silva Neto</strong>
-          <span>Engenharia de Computação</span>
-          <a href="mailto:bento.neto@gsuite.iff.edu.br">bento.neto@gsuite.iff.edu.br</a>
+      <div class="authors-grid">
+        <div class="author-card-box">
+          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Bento+Neto&background=1b5e20&color=fff&size=140" alt="Bento Fernandes">
+          <div class="author-name">Bento Fernandes da Silva Neto</div>
+          <div class="author-role">Fundamentação &amp; Metodologia</div>
+          <a class="author-email" href="mailto:bento.neto@gsuite.iff.edu.br">bento.neto@gsuite.iff.edu.br</a>
         </div>
-        <div class="author-item">
-          <strong>Bernardo Rainha Gomes</strong>
-          <span>Engenharia de Computação</span>
-          <a href="mailto:b.rainha@gsuite.iff.edu.br">b.rainha@gsuite.iff.edu.br</a>
+
+        <div class="author-card-box">
+          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Bernardo+Rainha&background=1b5e20&color=fff&size=140" alt="Bernardo Rainha">
+          <div class="author-name">Bernardo Rainha Gomes</div>
+          <div class="author-role">Diagnóstico &amp; Levantamento PMGIRS</div>
+          <a class="author-email" href="mailto:b.rainha@gsuite.iff.edu.br">b.rainha@gsuite.iff.edu.br</a>
         </div>
-        <div class="author-item">
-          <strong>Pedro Henrique Miranda de Oliveira</strong>
-          <span>Engenharia de Computação</span>
-          <a href="mailto:p.h.miranda1712@gmail.com">p.h.miranda1712@gmail.com</a>
+
+        <div class="author-card-box">
+          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Pedro+Miranda&background=1b5e20&color=fff&size=140" alt="Pedro Miranda">
+          <div class="author-name">Pedro Henrique Miranda de Oliveira</div>
+          <div class="author-role">Roteiro de Oratória &amp; Articulação</div>
+          <a class="author-email" href="mailto:p.h.miranda1712@gmail.com">p.h.miranda1712@gmail.com</a>
         </div>
-        <div class="author-item">
-          <strong>Pedro Henrique Rocha de Andrade</strong>
-          <span>Engenharia de Computação</span>
-          <a href="mailto:pedroiff0@gmail.com">pedroiff0@gmail.com</a>
+
+        <div class="author-card-box">
+          <img class="author-avatar" src="https://github.com/pedroiff0.png?size=140" alt="Pedro Rocha">
+          <div class="author-name">Pedro Henrique Rocha de Andrade</div>
+          <div class="author-role">Arquitetura Web &amp; Modelagem do PEV</div>
+          <a class="author-email" href="mailto:pedroiff0@gmail.com">pedroiff0@gmail.com</a>
         </div>
       </div>
 
-      <div style="margin-top: 0.85rem; padding: 0.75rem; background: #fafbfa; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted); text-align: left; line-height: 1.6;">
-        <div style="margin-bottom: 0.4rem;">
-          <strong>Professor Orientador:</strong> Prof. Me. Rafael Ferreira Tardin da Silva<br>
+      <div style="margin-top: 1rem; padding: 0.85rem; background: #fafbfa; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+        <div style="margin-bottom: 0.5rem;">
+          <strong>Professor Orientador:</strong> Prof. Me. Rafael Ferreira Tardin da Silva (Mestre em Filosofia / IFF)<br>
           <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-ferreira-tardin-da-silva/rafael%20tardin" target="_blank" rel="noopener" style="color: var(--iff-primary); text-decoration: underline; font-weight: 500;">
             Perfil Institucional Integra IFF
           </a>
         </div>
         <div>
-          <strong>Professor Patrono:</strong> Prof. Dr. Rafael Artur de Paiva Gardoni<br>
+          <strong>Professor Patrono:</strong> Prof. Dr. Rafael Artur de Paiva Gardoni (Doutor em Engenharia / IFF)<br>
           <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni" target="_blank" rel="noopener" style="color: var(--iff-primary); text-decoration: underline; font-weight: 500;">
             Perfil Institucional Integra IFF
           </a>
         </div>
       </div>
+
+      <!-- TABELA DE TECNOLOGIAS E STACK -->
+      <div style="margin-top: 1.2rem;">
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--iff-primary-dark); margin-bottom: 0.4rem;">Tecnologias Utilizadas no Projeto</h4>
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th>Camada</th>
+              <th>Tecnologia</th>
+              <th>Aplicação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Interface Cidadã</td>
+              <td>HTML5 Semântico, CSS3 e JS Vanilla</td>
+              <td>Aplicação web responsiva, busca instantânea e filtros</td>
+            </tr>
+            <tr>
+              <td>Editoração Acadêmica</td>
+              <td>LaTeX / ReLaTeX (Classes IFF)</td>
+              <td>Relatório técnico ABNT, slides de apresentação e panfleto A4</td>
+            </tr>
+            <tr>
+              <td>Georreferenciamento</td>
+              <td>SVG Vetorial Nativo</td>
+              <td>Mapa esquemático territorial dos campi e rota logística de 67 km</td>
+            </tr>
+            <tr>
+              <td>Hospedagem &amp; Deploy</td>
+              <td>GitHub Pages e Domínio Próprio</td>
+              <td>Distribuição estática em alta velocidade em elixo.phrandrade.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
   </main>
 
-  <!-- Mobile Bottom Tab Bar -->
+  <!-- BARRA DE NAVEGAÇÃO INFERIOR PARA CELULAR -->
   <nav class="mobile-tab-bar">
     <a href="#busca-rapida" class="tab-item active">
       <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       Buscar
     </a>
+    <a href="#mapa" class="tab-item">
+      <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg>
+      Mapa
+    </a>
     <a href="#legislacoes" class="tab-item">
-      <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      Leis &amp; PDFs
+      <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Leis
     </a>
     <a href="#projeto" class="tab-item">
       <svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
       PEV IFF
-    </a>
-    <a href="#documentos" class="tab-item">
-      <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
-      Trabalho
     </a>
     <a href="#autores" class="tab-item">
       <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -710,141 +986,393 @@
   </nav>
 
   <script>
+    // BANCO DE DADOS COMPLETO COM 34 ITENS
     const items = [
+      // BATERIAS
       {
-        title: "Baterias de Íon de Lítio (Celular, Notebook, E-bike)",
+        title: "Baterias de Celular e Smartphone (Íon de Lítio)",
         category: "baterias",
-        risk: "Risco alto de fuga térmica (thermal runaway), chamas e gases de cobalto/níquel se amassadas ou furadas.",
-        prep: "Isole ambos os polos metálicos com fita isolante ou fita crepe grossa. Guarde em caixa plástica seca.",
-        dest: "Entregue na loja onde comprou (logística reversa CONAMA 401) ou no futuro PEV do IFF."
+        risk: "Risco severo de fogo espontâneo por curto-circuito e emissão de gases de cobalto e lítio se amassada ou perfurada (Fonte: Norma ABNT NBR 16182).",
+        prep: "Isole imediatamente ambos os contatos metálicos com fita isolante ou crepe grossa. Guarde em pote plástico seco (Fonte: Manual de Manuseio Seguro).",
+        dest: "Entregue no Ponto de Entrega Voluntária (PEV) do IFF Bom Jesus ou na loja de celulares onde comprou (Logística Reversa CONAMA 401).",
+        source: "Resolução CONAMA n.º 401/2008"
       },
       {
-        title: "Pilhas Comuns e Alcalinas (AA, AAA, 9V, Botão)",
+        title: "Baterias de Notebook e Computador Portátil",
+        category: "baterias",
+        risk: "Conjunto com múltiplas células de alta capacidade energética. Risco de explosão térmica e vazamento de eletrólito corrosivo se descartada no lixo comum.",
+        prep: "Retire do aparelho se o modelo permitir e cole fita adesiva larga sobre os terminais de encaixe. Nunca tente abrir a cápsula selada.",
+        dest: "Receptáculo específico para baterias no PEV do IFF ou assistência técnica autorizada da marca.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Baterias de Bicicleta Elétrica e Patinete",
+        category: "baterias",
+        risk: "Tensão elétrica perigosa (36V a 48V) e grande massa de compostos de lítio. Risco de incêndio de difícil extinção em contato com água de chuva em aterros.",
+        prep: "Mantenha no invólucro de proteção original. Não transporte solta no porta-malas e proteja o conector de descarga.",
+        dest: "Oficinas autorizadas de veículos elétricos ou entrega orientada na recepção técnica do IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Baterias Portáteis de Recarga (Carregadores Portáteis)",
+        category: "baterias",
+        risk: "Células compactadas de lítio associadas a placa controladora. Comum estufamento interno e risco de ruptura por choque mecânico.",
+        prep: "Caso a carcaça apresente inchaço, acondicione imediatamente em caixa metálica ou recipiente com areia seca, longe de materiais inflamáveis.",
+        dest: "Caixa coletora de baterias do PEV no IFF ou lojas de eletrônicos credenciadas.",
+        source: "Manual de Proteção contra Incêndios (ABNT)"
+      },
+      {
+        title: "Baterias de Automóveis e Caminhões (Chumbo-Ácido)",
+        category: "baterias",
+        risk: "Até 10 kg de chumbo puro que causa danos cerebrais permanentes e 3 litros de solução de ácido sulfúrico concentrado corrosivo (Fonte: CONAMA 401).",
+        prep: "Mantenha rigorosamente na vertical com as tampas vedadas. Jamais deite ou tente retirar o ácido por conta própria.",
+        dest: "Troca obrigatória: entregue na revenda ou loja de baterias no momento da compra da nova (Sistema Compulsório de Logística Reversa).",
+        source: "Resolução CONAMA n.º 401/2008 (Art. 4.º)"
+      },
+      {
+        title: "Baterias de Motocicleta e Nobreaks Residenciais",
+        category: "baterias",
+        risk: "Baterias chumbo-ácido seladas (reguladas por válvula). Contêm placas internas de chumbo esponjoso altamente bioacumulativo no solo.",
+        prep: "Limpe poeira externa com pano seco e cubra os dois bornes de metal com fita plástica isolante.",
+        dest: "Lojas de baterias automotivas de Bom Jesus do Itabapoana ou PEV do IFF.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Baterias Antigas de Ferramentas sem Fio (Níquel-Cádmio)",
+        category: "baterias",
+        risk: "O cádmio é um metal pesado cancerígeno e tóxico para os rins. Proibido em lixões por contaminar a água subterrânea.",
+        prep: "Isole os terminais plásticos com fita isolante e acondicione em saco plástico grosso individual.",
+        dest: "PEV do IFF para descarte químico homologado junto ao Projeto Circuito Verde.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Baterias Recarregáveis de Níquel-Metal Hidreto",
+        category: "baterias",
+        risk: "Menos tóxicas que o cádmio, mas contêm níquel e terras raras que não devem ser misturados com resíduos orgânicos domésticos.",
+        prep: "Agrupe em caixa seca de papelão sem que os terminais entrem em contato direto uns com os outros.",
+        dest: "Postos de coleta de pilhas e baterias do IFF ou farmácias e supermercados conveniados.",
+        source: "Resolução INEA n.º 183/2019"
+      },
+
+      // PILHAS
+      {
+        title: "Pilhas Comuns e Alcalinas (Tamanhos Pequenos AA e AAA)",
         category: "pilhas",
-        risk: "Oxidam em aterros comuns e liberam zinco, manganês e cádmio que atingem o lençol freático e o Rio Itabapoana.",
-        prep: "Armazene em garrafa PET fechada. Em pilhas de 9V, cole fita nos dois polos de contato.",
-        dest: "Pontos de coleta de pilhas em supermercados, agências dos Correios ou recepção do IFF."
+        risk: "Em lixões ou no solo, a carcaça de aço se decompõe em meses, liberando manganês e zinco que atingem o Rio Itabapoana.",
+        prep: "Guarde as pilhas usadas dentro de uma garrafa plástica tipo PET fechada e seca até levar ao ponto de coleta.",
+        dest: "Coletores de pilhas em supermercados, agências dos Correios ou recepção do IFF.",
+        source: "Resolução CONAMA n.º 401/2008"
       },
       {
-        title: "Baterias de Chumbo-Ácido (Carros, Motos, Nobreaks)",
-        category: "baterias",
-        risk: "Ácido sulfúrico altamente corrosivo e até 10 kg de chumbo metálico bioacumulativo no organismo.",
-        prep: "Mantenha rigorosamente de pé na vertical. Nunca deite para não vazar a solução ácida.",
-        dest: "Troca obrigatória: entregue na loja de baterias ou autocenter na compra da nova."
+        title: "Baterias Retangulares de 9 Volts (Contato Duplo Frontal)",
+        category: "pilhas",
+        risk: "Os polos positivo e negativo ficam lado a lado. Em sacos de lixo com clipes, moedas ou palhas de aço, fecham curto e provocam chamas.",
+        prep: "Regra obrigatória: cole um pedaço de fita isolante cobrindo ambos os terminais de contato antes de guardar.",
+        dest: "Ponto de coleta de pilhas em escolas ou recepção do PEV no IFF.",
+        source: "Norma de Segurança ABNT / Corpo de Bombeiros"
       },
       {
-        title: "Smartphones, Celulares Antigos e Tablets",
+        title: "Baterias Botão de Lítio (Modelos CR2032 para Placas-Mãe)",
+        category: "pilhas",
+        risk: "Pequenas e perigosas: além da toxidade química, o formato atrai ingestão acidental por crianças e animais, causando necrose no esôfago.",
+        prep: "Cole uma fita transparente envolvendo toda a circunferência da moeda para impedir contato elétrico.",
+        dest: "Entregue em oficinas de informática do campus ou caixas de pilhas botão no IFF.",
+        source: "Sociedade Brasileira de Pediatria e CONAMA 401"
+      },
+      {
+        title: "Pilhas Botão de Relógio e Aparelho Auditivo (Alcalinas)",
+        category: "pilhas",
+        risk: "Podem conter traços de óxido de prata ou mercúrio residual que contaminam centenas de litros de água se descartadas na pia ou terra.",
+        prep: "Armazene em pequenos frascos plásticos de remédio bem tampados.",
+        dest: "Relojoarias do centro da cidade ou coletores de pilhas do IFF.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+
+      // CELULARES E TELEFONIA
+      {
+        title: "Smartphones Modernos com Tela Sensível ao Toque",
         category: "celulares",
-        risk: "Metais pesados no circuito e risco de estufamento da bateria interna caso esquecido sob sol.",
-        prep: "Faça backup dos seus arquivos e faça a restauração para os padrões de fábrica.",
-        dest: "Agências dos Correios (Balcão Cidadão com recebimento gratuito) ou PEV IFF."
+        risk: "Contêm circuitos com mais de 30 elementos químicos distintos e bateria interna lacrada de lítio que exige desmontagem cuidadosa.",
+        prep: "Faça cópia de segurança dos seus arquivos, remova cartões de memória e restaure as configurações de fábrica para limpar seus dados.",
+        dest: "Balcão Cidadão das agências dos Correios, lojas de operadoras ou PEV no IFF.",
+        source: "Guia de Segurança Digital e PNRS 12.305"
       },
       {
-        title: "Placas-mãe, Placas de Vídeo e Circuitos",
+        title: "Celulares Antigos de Tecla e Telefones sem Fio Fixos",
+        category: "celulares",
+        risk: "Componentes antigos com placas ricas em chumbo na solda e teclados de borracha sintética de difícil degradação.",
+        prep: "Remova a tampa traseira e retire a bateria para armazená-la separadamente do aparelho.",
+        dest: "Caixa de eletrônicos do PEV no IFF Bom Jesus do Itabapoana.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Tablets e Leitores de Livros Digitais (E-readers)",
+        category: "celulares",
+        risk: "Grandes placas de circuito e baterias laminares finas que podem romper se o aparelho for entortado no lixo comum.",
+        prep: "Não tente descolar a tela nem dobrar o aparelho. Transporte em pasta ou caixa fina de papelão.",
+        dest: "PEV do IFF para triagem e reaproveitamento escolar.",
+        source: "Resolução INEA n.º 183/2019"
+      },
+      {
+        title: "Fones de Ouvido sem Fio com Estojo de Recarga",
+        category: "celulares",
+        risk: "Cada fone possui uma microbateria de lítio e o estojo possui outra maior. Três baterias concentradas em um dispositivo minúsculo.",
+        prep: "Mantenha os fones guardados dentro do estojo original para evitar perda ou amassamento das peças.",
+        dest: "Caixa de pequenos eletrônicos do PEV no IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Fones de Ouvido com Fio e Fones com Microfone",
+        category: "celulares",
+        risk: "Fios finos de cobre esmaltado revestidos por plástico que costumam ser incinerados de forma clandestina.",
+        prep: "Enrole o cabo suavemente em voltas circulares sem dar nós apertados.",
+        dest: "Doação para salas de aula e laboratórios do IFF ou PEV comunitário.",
+        source: "Práticas Sustentáveis de Logística Reversa"
+      },
+      {
+        title: "Carregadores de Tomada e Adaptadores USB",
+        category: "celulares",
+        risk: "Capacitores internos que retêm carga residual e placas de circuito com soldas de estanho e chumbo.",
+        prep: "Verifique se o conector de metal não está quebrado e guarde com o cabo enrolado junto.",
+        dest: "PEV do IFF para reaproveitamento em projetos de eletrônica básica.",
+        source: "Plano Municipal de Resíduos Sólidos"
+      },
+
+      // INFORMÁTICA E PEÇAS
+      {
+        title: "Placas-Mãe de Computadores e Servidores",
         category: "informatica",
-        risk: "Soldas com estanho e chumbo. Se quebradas, a poeira metálica pode contaminar o ambiente.",
-        prep: "Embale em caixas de papelão para evitar fraturas físicas nas trilhas.",
-        dest: "Laboratórios de informática do IFF (aulas de hardware) ou Circuito Verde."
+        risk: "Centenas de componentes soldados com liga metálica, vernizes de proteção e retardantes de fogo bromados.",
+        prep: "Retire a pilha moeda CR2032 da placa antes de descartar. Acondicione em saco plástico antiestático ou papelão.",
+        dest: "Laboratórios do curso de Engenharia de Computação do IFF ou Circuito Verde.",
+        source: "Manual de Triagem Técnica do IFF Guarus"
       },
       {
-        title: "Fontes de Alimentação, Carregadores e Cabos",
+        title: "Placas de Vídeo Dedicadas e Memórias RAM",
         category: "informatica",
-        risk: "Plásticos de difícil decomposição e cobre que costuma ser queimado ilegalmente.",
-        prep: "Enrole os fios sem dar nós apertados. Mantenha os plugues íntegros.",
-        dest: "Doação para oficinas escolares do campus ou descarte no PEV IFF."
+        risk: "Presença de contatos banhados a ouro e chips de memória que exigem refino químico industrial especializado.",
+        prep: "Evite quebrar as travas de plástico e mantenha os dissipadores de calor de alumínio presos à placa.",
+        dest: "Oficinas práticas de hardware do IFF ou envio homologado a fundições parceiras.",
+        source: "Projeto Circuito Verde (IFF Campus Guarus)"
       },
       {
-        title: "Monitores Antigos (Tubo CRT) e Telas LCD",
+        title: "Fontes de Alimentação de Computador (Fontes ATX)",
         category: "informatica",
-        risk: "Tubos CRT possuem até 2 kg de óxido de chumbo no vidro. Telas LCD antigas possuem lâmpadas de mercúrio.",
-        prep: "Nunca quebre o vidro ou carcaça. O vácuo interno do tubo pode implodir.",
-        dest: "Agendamento com a Secretaria Municipal de Meio Ambiente ou campanhas de REEE pesado."
+        risk: "Capacitores eletrolíticos de alta voltagem podem dar choque mesmo desligados da tomada há dias.",
+        prep: "Nunca abra a caixa metálica da fonte. Mantenha os parafusos fechados e corte os fios apenas se necessário.",
+        dest: "Oficinas de informática do campus ou PEV no IFF.",
+        source: "Norma Regulamentadora NR-10 e ABNT"
       },
       {
-        title: "Eletrodomésticos Pequenos (Ferro, Liquidificador)",
+        title: "Discos Rígidos de Armazenamento Mecânico (HDDs)",
+        category: "informatica",
+        risk: "Risco de segurança de dados privados caso descartados sem formatação profunda, além de ímãs de neodímio fortes.",
+        prep: "Execute programas de formatação segura ou desmagnetização. Se inutilizado, entregue a carcaça fechada.",
+        dest: "PEV do IFF para triagem de segurança da informação e descaracterização.",
+        source: "Lei Geral de Proteção de Dados (LGPD)"
+      },
+      {
+        title: "Unidades de Armazenamento SSD e Pen Drives",
+        category: "informatica",
+        risk: "Microchips semicondutores de memória flash e conectores metálicos de alta durabilidade que não se decompõem.",
+        prep: "Apague os arquivos gravados e guarde os conectores protegidos de umidade.",
+        dest: "Laboratórios escolares do campus ou caixa de miudezas do PEV.",
+        source: "Resolução INEA n.º 183/2019"
+      },
+      {
+        title: "Teclados e Mouses de Computador (com ou sem fio)",
+        category: "informatica",
+        risk: "Plásticos ABS e membranas de silicone de grande volume que sobrecarregam os caminhões de lixo até Campos.",
+        prep: "Se o mouse for sem fio, retire as pilhas de dentro dele antes de entregar. Limpe sujeira superficial.",
+        dest: "Doação para projetos sociais de inclusão digital ou PEV no IFF.",
+        source: "Política Nacional de Resíduos Sólidos"
+      },
+      {
+        title: "Roteadores e Modems de Internet Residencial",
+        category: "informatica",
+        risk: "Contêm fontes chaveadas externas e placas de radiofrequência que poluem se enterradas em aterros comuns.",
+        prep: "Junte o roteador com a fonte original de tomada que veio com ele. Pressione o botão de reset para apagar senhas de rede.",
+        dest: "PEV no IFF ou devolução na central da operadora de internet local.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Cabos USB, Fios Elétricos e Cabos de Força",
+        category: "informatica",
+        risk: "A queima clandestina para retirar o cobre libera fumaça de cloro e dioxinas que causam problemas respiratórios na população.",
+        prep: "Nunca queime para retirar o plástico! Enrole os fios em meadas limpas sem nós cegos.",
+        dest: "Entregue no PEV do IFF para desencapamento mecânico seguro no Circuito Verde.",
+        source: "Resolução INEA n.º 183/2019"
+      },
+      {
+        title: "Monitores Antigos de Tubo de Vidro (CRT)",
+        category: "informatica",
+        risk: "O vidro do tubo contém até 2 kg de óxido de chumbo e vácuo sob pressão. Se quebrado, implode e espalha estilhaços com fósforo tóxico.",
+        prep: "Jamais bata no vidro ou tente quebrar a carcaça. Transporte sempre com a tela voltada para cima em base macia.",
+        dest: "Agendamento especial com a Secretaria Municipal de Meio Ambiente ou campanhas de REEE pesado no IFF.",
+        source: "Diretrizes de Resíduos Eletroeletrônicos Perigosos"
+      },
+      {
+        title: "Monitores e Televisores de Tela Plana (LCD, LED e OLED)",
+        category: "informatica",
+        risk: "Monitores LCD mais antigos usam lâmpadas CCFL que contêm vapor de mercúrio. Telas LED possuem grande área de cristais poliméricos.",
+        prep: "Não pressione o painel frontal de vidro e transporte com a tela protegida por papelão ou plástico bolha.",
+        dest: "Campanhas de coleta semestral do IFF ou PEV regional.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Impressoras Domésticas de Jato de Tinta e Cartuchos",
+        category: "informatica",
+        risk: "Tinta líquida residual com solventes químicos que mancham e contaminam a água. Mecanismo de tração com motores e correias.",
+        prep: "Retire os cartuchos de dentro da impressora e guarde-os em sacos plásticos vedados para não vazar tinta na carcaça.",
+        dest: "Lojas de recarga de cartuchos ou PEV no IFF Bom Jesus do Itabapoana.",
+        source: "Resolução CONAMA n.º 401/2008 e PNRS"
+      },
+      {
+        title: "Impressoras a Laser de Escritório e Cartuchos de Toner",
+        category: "informatica",
+        risk: "O pó de toner é composto por partículas microscópicas de carbono e óxido de ferro que penetram nos pulmões se inaladas.",
+        prep: "Nunca abra nem perfure o cilindro do toner. Mantenha em saco plástico lacrado e transporte na vertical.",
+        dest: "Pontos de logística reversa do fabricante ou entrega orientada no PEV do campus.",
+        source: "Ficha de Informação de Segurança de Produtos Químicos"
+      },
+
+      // ELETRODOMÉSTICOS
+      {
+        title: "Fornos Micro-Ondas e Aparelhos Térmicos",
         category: "eletro",
-        risk: "Metais e plásticos que ocupam espaço desnecessário no transporte até Campos.",
-        prep: "Limpe resíduos de pó ou líquidos antes de entregar.",
-        dest: "Associações locais de catadores ou assistência técnica para reaproveitamento de motores."
+        risk: "O transformador e o capacitor de alta tensão retêm energia mortal. A válvula magnetron possui cerâmica isolante delicada.",
+        prep: "Nunca tente abrir o gabinete traseiro nem tocar nos componentes internos com chave de fenda. Limpe gordura interna.",
+        dest: "Oficinas de conserto eletrodoméstico credenciadas ou campanhas de coleta de sucata do IFF.",
+        source: "Normas de Segurança Elétrica ABNT / NR-10"
+      },
+      {
+        title: "Eletrodomésticos com Motor (Liquidificadores, Batedeiras, Ventiladores)",
+        category: "eletro",
+        risk: "Ocupam volume desnecessário no caminhão de lixo até Campos. Motores elétricos contêm bobinas de cobre e ferro reaproveitáveis.",
+        prep: "Retire os copos de vidro ou lâminas soltas. Enrole o cabo de tomada em volta da base do motor.",
+        dest: "Associações locais de catadores de Bom Jesus ou oficinas de manutenção técnica do IFF.",
+        source: "Plano Municipal de Gestão de Resíduos Sólidos"
+      },
+
+      // LÂMPADAS
+      {
+        title: "Lâmpadas Fluorescentes Compactas e Tubulares",
+        category: "lampadas",
+        risk: "Atenção máxima: possuem vapor tóxico de mercúrio puro no interior. Se quebrarem em casa, os vapores são inalados instantaneamente.",
+        prep: "Se quebrar, saia do cômodo por 15 minutos, abra janelas, use luvas e recolha os cacos com fita adesiva (nunca aspire com aspirador). Guarde inteiras na embalagem de papelão.",
+        dest: "Entregue nas lojas de material elétrico onde comprou (Logística Reversa Obrigatória da PNRS). O PEV do IFF não recebe lâmpadas quebradas.",
+        source: "Acordo Setorial de Lâmpadas Fluorescentes / MMA"
+      },
+      {
+        title: "Lâmpadas de LED Residenciais e Fitas Luminosas",
+        category: "lampadas",
+        risk: "Não contêm mercúrio gasoso, mas utilizam pequenas placas de circuito eletrônico e dissipadores metálicos que devem ser reciclados.",
+        prep: "Mantenha a cúpula plástica ou de vidro protegida contra esmagamento.",
+        dest: "Coletores de lâmpadas LED em supermercados de materiais de construção ou PEV no IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
       }
     ];
 
-    const list = document.getElementById('productList');
-    const searchInput = document.getElementById('searchInput');
-    const chips = document.querySelectorAll('.chip');
-    const counterLabel = document.getElementById('counterLabel');
+    // ELEMENTOS DA INTERFACE
+    const container = document.getElementById("items-container");
+    const searchInput = document.getElementById("search-input");
+    const chips = document.querySelectorAll(".chip-btn");
+    const resultsCount = document.getElementById("results-count");
 
-    let currentCat = 'all';
+    let currentFilter = "todas";
+    let searchQuery = "";
 
-    function render(filter = '', cat = 'all') {
-      list.innerHTML = '';
-      const query = filter.toLowerCase().trim();
-
-      const filtered = items.filter(i => {
-        const matchesCat = (cat === 'all' || i.category === cat);
-        const matchesQuery = i.title.toLowerCase().includes(query) ||
-                             i.risk.toLowerCase().includes(query) ||
-                             i.prep.toLowerCase().includes(query) ||
-                             i.dest.toLowerCase().includes(query);
-        return matchesCat && matchesQuery;
+    function renderItems() {
+      container.innerHTML = "";
+      
+      const filtered = items.filter(item => {
+        const matchesCat = currentFilter === "todas" || item.category === currentFilter;
+        const text = (item.title + " " + item.risk + " " + item.prep + " " + item.dest).toLowerCase();
+        const matchesSearch = text.includes(searchQuery.toLowerCase());
+        return matchesCat && matchesSearch;
       });
 
-      counterLabel.textContent = `${filtered.length} item${filtered.length === 1 ? '' : 's'}`;
+      resultsCount.textContent = `Exibindo ${filtered.length} de ${items.length} itens cadastrados`;
 
       if (filtered.length === 0) {
-        list.innerHTML = `
-          <div style="text-align: center; padding: 2.5rem 1rem; background: white; border: 1.5px dashed var(--border); border-radius: var(--radius); font-size: 0.9rem; color: var(--text-muted);">
-            Nenhum produto encontrado. Tente buscar por termos como "celular", "pilha", "lítio" ou "cabo".
+        container.innerHTML = `
+          <div style="text-align: center; padding: 2rem; background: #fff; border-radius: var(--radius-md); border: 1px dashed var(--border); color: #64748b;">
+            <p style="font-weight: 600; font-size: 1rem; margin-bottom: 0.3rem;">Nenhum item encontrado para sua busca.</p>
+            <p style="font-size: 0.82rem;">Tente buscar por termos mais genéricos como "bateria", "pilha", "placa", "cabo" ou "motor".</p>
           </div>
         `;
         return;
       }
 
-      filtered.forEach(i => {
-        const card = document.createElement('article');
-        card.className = 'product-card';
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "item-card";
+        
+        const catNames = {
+          baterias: "Bateria",
+          pilhas: "Pilha",
+          celulares: "Telefonia",
+          informatica: "Informática",
+          eletro: "Eletrodoméstico",
+          lampadas: "Lâmpada"
+        };
+
         card.innerHTML = `
-          <div class="card-top">
-            <span class="card-badge badge-${i.category}">${i.category}</span>
+          <div class="item-header">
+            <h3 class="item-title">${item.title}</h3>
+            <span class="category-badge">${catNames[item.category] || item.category}</span>
           </div>
-          <h3 class="product-title">${i.title}</h3>
-          <div class="card-risk-alert">
-            <svg class="svg-icon" style="color: var(--danger);" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div><strong>Risco:</strong> ${i.risk}</div>
+
+          <div class="info-block risk">
+            <span class="info-label">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Risco Toxicológico &amp; Físico
+            </span>
+            <span>${item.risk}</span>
           </div>
-          <div class="card-block">
-            <div class="block-label">
-              <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Como Preparar
-            </div>
-            ${i.prep}
+
+          <div class="info-block prep">
+            <span class="info-label">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Como Preparar com Segurança
+            </span>
+            <span>${item.prep}</span>
           </div>
-          <div class="card-dest">
-            <strong>
-              <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Onde Entregar em BJI:
-            </strong>
-            ${i.dest}
+
+          <div class="info-block dest">
+            <span class="info-label">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Ponto de Destino Homologado
+            </span>
+            <span>${item.dest}</span>
+          </div>
+
+          <div class="info-source">
+            Referência: ${item.source}
           </div>
         `;
-        list.appendChild(card);
+
+        container.appendChild(card);
       });
     }
 
-    searchInput.addEventListener('input', (e) => {
-      render(e.target.value, currentCat);
+    // EVENTOS DE BUSCA E FILTROS
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderItems();
     });
 
-    chips.forEach(c => {
-      c.addEventListener('click', () => {
-        chips.forEach(b => b.classList.remove('active'));
-        c.classList.add('active');
-        currentCat = c.getAttribute('data-cat');
-        render(searchInput.value, currentCat);
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        currentFilter = chip.getAttribute("data-cat");
+        renderItems();
       });
     });
 
-    render();
+    // RENDER INICIAL
+    renderItems();
   </script>
 </body>
 </html>
