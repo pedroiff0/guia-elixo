@@ -40,6 +40,18 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* OCULTAR BARRA DE SCROLL VERTICAL MANTENDO ROLAGEM FUNCIONAL */
+    html, body {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--iff-bg-soft);
@@ -533,6 +545,78 @@
       font-weight: 600;
     }
 
+    /* NAVEGAÇÃO SUPERIOR PARA DESKTOP */
+    .desktop-nav {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        flex-wrap: wrap;
+      }
+      .desktop-nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.10);
+        color: #ffffff;
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .desktop-nav-link:hover {
+        background: #ffffff;
+        color: var(--iff-primary-dark);
+        font-weight: 600;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      }
+    }
+
+    /* TÓPICOS COLAPSÁVEIS */
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      padding: 0.35rem 0;
+      transition: all 0.2s ease;
+    }
+    .accordion-header:hover .accordion-title {
+      color: var(--iff-primary-dark);
+    }
+    .accordion-chevron-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--iff-primary);
+      transition: transform 0.25s ease, background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .accordion-header:hover .accordion-chevron-box {
+      background: #e2e8f0;
+    }
+    .accordion-section.collapsed .accordion-chevron-box {
+      transform: rotate(-90deg);
+    }
+    .accordion-section.collapsed .accordion-content {
+      display: none;
+    }
+
     /* MOBILE BOTTOM TAB BAR */
     .mobile-tab-bar {
       position: fixed;
@@ -849,6 +933,34 @@
       </div>
       <h1 class="app-title">Guia de Descarte de E-Lixo e Baterias</h1>
       <p class="app-subtitle">Pra onde vai a bateria que chegou ao fim? Catálogo técnico, neutralização de riscos e triagem regional.</p>
+
+      <!-- NAVEGAÇÃO DESKTOP OTIMIZADA -->
+      <nav class="desktop-nav" aria-label="Navegação Principal Desktop">
+        <a href="#busca-rapida" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Catálogo (34 Itens)
+        </a>
+        <a href="#mapa" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          Mapa Regional &amp; Rota
+        </a>
+        <a href="#legislacoes" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Legislação &amp; Normas
+        </a>
+        <a href="#projeto" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          O Projeto no IFF
+        </a>
+        <a href="#documentos" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Documentos &amp; Panfleto
+        </a>
+        <a href="#autores" class="desktop-nav-link">
+          <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Equipe &amp; Docentes
+        </a>
+      </nav>
     </div>
   </header>
 
@@ -913,8 +1025,6 @@
             <span>Destino atual de 0,724 kg/hab/dia do rejeito urbano indiferenciado de Bom Jesus.</span>
           </div>
         </div>
-      </div>
-    </div>
       </div>
     </div>
 
@@ -1626,7 +1736,7 @@
       const mapEl = document.getElementById('mapa-leaflet');
       if (!mapEl) return;
 
-      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.43, -41.49], 9);
+      window.leafletMapInstance = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.43, -41.49], 9);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -1637,7 +1747,7 @@
       const locais = [
         {
           name: "IFF Campus Bom Jesus do Itabapoana",
-          coords: [-21.13701, -41.65643],
+          coords: [-21.13627, -41.65808],
           role: "Origem: PEV Piloto Comunitário de Triagem Primária sem Desmonte (Res. INEA 183/2019)",
           color: "#166534",
           radius: 11
@@ -1693,7 +1803,7 @@
         },
         {
           name: "Agência Correios Bom Jesus do Itabapoana",
-          coords: [-21.13960, -41.67890],
+          coords: [-21.13680, -41.67600],
           role: "Ponto credenciado de logística reversa eletroeletrônica (Green Eletron / exclui pilhas)",
           color: "#eab308",
           radius: 8
@@ -1715,8 +1825,8 @@
 
       // ROTA RODOVIÁRIA REAL PELA MALHA ASFÁLTICA (RJ-230, BR-356 E BR-101)
       const rotaRodoviaria = [
-        [-21.13696, -41.65586],
-        [-21.13897, -41.65711],
+        [-21.13627, -41.65808],
+        [-21.13611, -41.65920],
         [-21.13507, -41.66259],
         [-21.14105, -41.66307],
         [-21.15419, -41.66915],
@@ -1821,7 +1931,8 @@
         [-21.73681, -41.34105],
         [-21.73831, -41.33257],
         [-21.74188, -41.33014],
-        [-21.73544, -41.32537]
+        [-21.73544, -41.32537],
+        [-21.73599, -41.32439]
       ];
 
       const polyline = L.polyline(rotaRodoviaria, {
@@ -1841,7 +1952,58 @@
       map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
     }
 
-    window.addEventListener('load', initLeafletMap);
+    
+    // INICIALIZAÇÃO DOS TÓPICOS COLAPSÁVEIS COM TOGGLE E CHEVRON
+    function initCollapsibleSections() {
+      document.querySelectorAll('.accordion-section').forEach(sec => {
+        const titleEl = sec.querySelector('.accordion-title');
+        if (!titleEl || sec.querySelector('.accordion-header')) return;
+
+        const header = document.createElement('div');
+        header.className = 'accordion-header';
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'true');
+        header.title = 'Clique para recolher ou expandir este tópico';
+
+        titleEl.parentNode.insertBefore(header, titleEl);
+        header.appendChild(titleEl);
+
+        const chevronBox = document.createElement('div');
+        chevronBox.className = 'accordion-chevron-box';
+        chevronBox.innerHTML = '<svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>';
+        header.appendChild(chevronBox);
+
+        const content = document.createElement('div');
+        content.className = 'accordion-content';
+
+        while (header.nextSibling) {
+          content.appendChild(header.nextSibling);
+        }
+        sec.appendChild(content);
+
+        const toggle = () => {
+          const isCollapsed = sec.classList.toggle('collapsed');
+          header.setAttribute('aria-expanded', !isCollapsed);
+          if (!isCollapsed && sec.id === 'mapa' && window.leafletMapInstance) {
+            setTimeout(() => window.leafletMapInstance.invalidateSize(), 200);
+          }
+        };
+
+        header.addEventListener('click', toggle);
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+    }
+
+    window.addEventListener('load', () => {
+      initCollapsibleSections();
+      initLeafletMap();
+    });
   </script>
 </body>
 </html>
