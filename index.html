@@ -956,7 +956,7 @@
             <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Portal Oficial CONAMA / MMA
           </a>
-          <a href="https://www.legisweb.com.br/legislacao/?id=72929" target="_blank" rel="noopener" class="law-item-btn secondary">
+          <a href="https://www.legisweb.com.br/legislacao/?id=108777" target="_blank" rel="noopener" class="law-item-btn secondary">
             Texto Integral no LegisWeb
           </a>
         </div>
@@ -970,7 +970,7 @@
             <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Portal Oficial do INEA/RJ
           </a>
-          <a href="https://www.legisweb.com.br/legislacao/?id=388039" target="_blank" rel="noopener" class="law-item-btn secondary">
+          <a href="https://www.legisweb.com.br/legislacao/?id=380155" target="_blank" rel="noopener" class="law-item-btn secondary">
             Texto Integral no LegisWeb
           </a>
         </div>
@@ -1606,107 +1606,6 @@
     searchInput.addEventListener("input", (e) => {
       searchQuery = e.target.value;
       renderItems();
-
-    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
-    function initLeafletMap() {
-      if (typeof L === 'undefined') return;
-      const mapEl = document.getElementById('mapa-leaflet');
-      if (!mapEl) return;
-
-      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-
-      const locais = [
-        {
-          name: "IFF Campus Bom Jesus do Itabapoana",
-          coords: [-21.1394, -41.6789],
-          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
-          color: "#166534"
-        },
-        {
-          name: "IFF Campus Guarus (Campos dos Goytacazes)",
-          coords: [-21.7315, -41.3190],
-          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
-          color: "#1d4ed8"
-        },
-        {
-          name: "IFF Campus Campos Centro",
-          coords: [-21.7545, -41.3244],
-          role: "Polo Acadêmico e de Extensão Tecnológica",
-          color: "#475569"
-        },
-        {
-          name: "IFF Campus Itaperuna",
-          coords: [-21.2062, -41.8798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus Santo Antônio de Pádua",
-          coords: [-21.5367, -42.1798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus Cambuci",
-          coords: [-21.5750, -41.9120],
-          role: "Ponto Regional de Apoio",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus São João da Barra",
-          coords: [-21.6410, -41.0510],
-          role: "Ponto Regional Norte Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "CTR Campos (Aterro Sanitário Consorciado)",
-          coords: [-21.7850, -41.3650],
-          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
-          color: "#b91c1c"
-        },
-        {
-          name: "Agência Correios Bom Jesus do Itabapoana",
-          coords: [-21.1350, -41.6750],
-          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
-          color: "#eab308"
-        }
-      ];
-
-      locais.forEach(loc => {
-        const marker = L.circleMarker(loc.coords, {
-          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
-          fillColor: loc.color,
-          color: "#ffffff",
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.85
-        }).addTo(map);
-
-        marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
-      });
-
-      // Linha rodoviária BJI <-> Guarus (67 km)
-      const rota = [
-        [-21.1394, -41.6789],
-        [-21.3200, -41.5200],
-        [-21.5100, -41.4100],
-        [-21.7315, -41.3190]
-      ];
-      L.polyline(rota, {
-        color: '#dc2626',
-        weight: 3.5,
-        opacity: 0.8,
-        dashArray: '6, 6'
-      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
-    }
-
-    window.addEventListener('load', initLeafletMap);
-
     });
 
     chips.forEach(chip => {
@@ -1715,213 +1614,234 @@
         chip.classList.add("active");
         currentFilter = chip.getAttribute("data-cat");
         renderItems();
-
-    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
-    function initLeafletMap() {
-      if (typeof L === 'undefined') return;
-      const mapEl = document.getElementById('mapa-leaflet');
-      if (!mapEl) return;
-
-      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-
-      const locais = [
-        {
-          name: "IFF Campus Bom Jesus do Itabapoana",
-          coords: [-21.1394, -41.6789],
-          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
-          color: "#166534"
-        },
-        {
-          name: "IFF Campus Guarus (Campos dos Goytacazes)",
-          coords: [-21.7315, -41.3190],
-          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
-          color: "#1d4ed8"
-        },
-        {
-          name: "IFF Campus Campos Centro",
-          coords: [-21.7545, -41.3244],
-          role: "Polo Acadêmico e de Extensão Tecnológica",
-          color: "#475569"
-        },
-        {
-          name: "IFF Campus Itaperuna",
-          coords: [-21.2062, -41.8798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus Santo Antônio de Pádua",
-          coords: [-21.5367, -42.1798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus Cambuci",
-          coords: [-21.5750, -41.9120],
-          role: "Ponto Regional de Apoio",
-          color: "#64748b"
-        },
-        {
-          name: "IFF Campus São João da Barra",
-          coords: [-21.6410, -41.0510],
-          role: "Ponto Regional Norte Fluminense",
-          color: "#64748b"
-        },
-        {
-          name: "CTR Campos (Aterro Sanitário Consorciado)",
-          coords: [-21.7850, -41.3650],
-          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
-          color: "#b91c1c"
-        },
-        {
-          name: "Agência Correios Bom Jesus do Itabapoana",
-          coords: [-21.1350, -41.6750],
-          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
-          color: "#eab308"
-        }
-      ];
-
-      locais.forEach(loc => {
-        const marker = L.circleMarker(loc.coords, {
-          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
-          fillColor: loc.color,
-          color: "#ffffff",
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.85
-        }).addTo(map);
-
-        marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
-      });
-
-      // Linha rodoviária BJI <-> Guarus (67 km)
-      const rota = [
-        [-21.1394, -41.6789],
-        [-21.3200, -41.5200],
-        [-21.5100, -41.4100],
-        [-21.7315, -41.3190]
-      ];
-      L.polyline(rota, {
-        color: '#dc2626',
-        weight: 3.5,
-        opacity: 0.8,
-        dashArray: '6, 6'
-      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
-    }
-
-    window.addEventListener('load', initLeafletMap);
-
       });
     });
 
-    // RENDER INICIAL
+    // RENDER INICIAL DO CATÁLOGO
     renderItems();
 
-    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
+    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL (ROTA RODOVIÁRIA REAL)
     function initLeafletMap() {
       if (typeof L === 'undefined') return;
       const mapEl = document.getElementById('mapa-leaflet');
       if (!mapEl) return;
 
-      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
+      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.43, -41.49], 9);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
 
+      // PONTOS OFICIAIS COM COORDENADAS REAIS
       const locais = [
         {
           name: "IFF Campus Bom Jesus do Itabapoana",
-          coords: [-21.1394, -41.6789],
-          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
-          color: "#166534"
+          coords: [-21.13701, -41.65643],
+          role: "Origem: PEV Piloto Comunitário de Triagem Primária sem Desmonte (Res. INEA 183/2019)",
+          color: "#166534",
+          radius: 11
         },
         {
           name: "IFF Campus Guarus (Campos dos Goytacazes)",
-          coords: [-21.7315, -41.3190],
-          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
-          color: "#1d4ed8"
+          coords: [-21.73599, -41.32439],
+          role: "Destino: Projeto Circuito Verde (Triagem Técnica, Desmonte & Reinserção Homologada)",
+          color: "#1d4ed8",
+          radius: 11
         },
         {
           name: "IFF Campus Campos Centro",
-          coords: [-21.7545, -41.3244],
-          role: "Polo Acadêmico e de Extensão Tecnológica",
-          color: "#475569"
+          coords: [-21.75450, -41.32440],
+          role: "Reitoria e Polo Acadêmico Central",
+          color: "#475569",
+          radius: 7
         },
         {
           name: "IFF Campus Itaperuna",
-          coords: [-21.2062, -41.8798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
+          coords: [-21.20620, -41.87980],
+          role: "Polo Regional Noroeste Fluminense",
+          color: "#64748b",
+          radius: 7
         },
         {
           name: "IFF Campus Santo Antônio de Pádua",
-          coords: [-21.5367, -42.1798],
-          role: "Ponto Regional Noroeste Fluminense",
-          color: "#64748b"
+          coords: [-21.53670, -42.17980],
+          role: "Polo Regional Noroeste Fluminense",
+          color: "#64748b",
+          radius: 7
         },
         {
           name: "IFF Campus Cambuci",
-          coords: [-21.5750, -41.9120],
-          role: "Ponto Regional de Apoio",
-          color: "#64748b"
+          coords: [-21.57500, -41.91200],
+          role: "Polo Regional Noroeste / Norte",
+          color: "#64748b",
+          radius: 7
         },
         {
           name: "IFF Campus São João da Barra",
-          coords: [-21.6410, -41.0510],
-          role: "Ponto Regional Norte Fluminense",
-          color: "#64748b"
+          coords: [-21.64100, -41.05100],
+          role: "Polo Regional Norte Fluminense (Açu)",
+          color: "#64748b",
+          radius: 7
         },
         {
-          name: "CTR Campos (Aterro Sanitário Consorciado)",
-          coords: [-21.7850, -41.3650],
-          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
-          color: "#b91c1c"
+          name: "CTR Campos (Aterro Consorciado)",
+          coords: [-21.78500, -41.36500],
+          role: "Destino municipal atual do rejeito indiferenciado de BJI (sem triagem)",
+          color: "#b91c1c",
+          radius: 8
         },
         {
           name: "Agência Correios Bom Jesus do Itabapoana",
-          coords: [-21.1350, -41.6750],
-          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
-          color: "#eab308"
+          coords: [-21.13960, -41.67890],
+          role: "Ponto credenciado de logística reversa eletroeletrônica (Green Eletron / exclui pilhas)",
+          color: "#eab308",
+          radius: 8
         }
       ];
 
       locais.forEach(loc => {
         const marker = L.circleMarker(loc.coords, {
-          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
+          radius: loc.radius || 8,
           fillColor: loc.color,
           color: "#ffffff",
           weight: 2,
           opacity: 1,
-          fillOpacity: 0.85
+          fillOpacity: 0.9
         }).addTo(map);
 
         marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
       });
 
-      // Linha rodoviária BJI <-> Guarus (67 km)
-      const rota = [
-        [-21.1394, -41.6789],
-        [-21.3200, -41.5200],
-        [-21.5100, -41.4100],
-        [-21.7315, -41.3190]
+      // ROTA RODOVIÁRIA REAL PELA MALHA ASFÁLTICA (RJ-230, BR-356 E BR-101)
+      const rotaRodoviaria = [
+        [-21.13696, -41.65586],
+        [-21.13897, -41.65711],
+        [-21.13507, -41.66259],
+        [-21.14105, -41.66307],
+        [-21.15419, -41.66915],
+        [-21.16625, -41.67817],
+        [-21.19031, -41.69297],
+        [-21.19492, -41.69870],
+        [-21.19513, -41.70744],
+        [-21.19850, -41.71425],
+        [-21.20137, -41.71652],
+        [-21.20578, -41.72340],
+        [-21.21091, -41.72774],
+        [-21.21443, -41.73540],
+        [-21.21737, -41.73806],
+        [-21.22106, -41.73897],
+        [-21.22384, -41.74244],
+        [-21.24868, -41.75923],
+        [-21.25235, -41.76423],
+        [-21.25667, -41.76717],
+        [-21.25810, -41.76666],
+        [-21.26147, -41.76089],
+        [-21.27076, -41.75084],
+        [-21.28139, -41.73126],
+        [-21.28821, -41.71449],
+        [-21.29857, -41.70663],
+        [-21.31087, -41.70936],
+        [-21.31529, -41.70729],
+        [-21.33078, -41.71097],
+        [-21.33942, -41.71011],
+        [-21.34407, -41.71474],
+        [-21.34686, -41.71492],
+        [-21.35087, -41.71329],
+        [-21.35478, -41.70928],
+        [-21.37020, -41.70610],
+        [-21.37442, -41.69532],
+        [-21.37812, -41.69181],
+        [-21.38032, -41.68789],
+        [-21.38954, -41.69475],
+        [-21.39485, -41.69222],
+        [-21.39999, -41.69229],
+        [-21.40470, -41.68898],
+        [-21.40923, -41.69158],
+        [-21.41666, -41.69323],
+        [-21.42172, -41.69059],
+        [-21.42467, -41.69355],
+        [-21.42871, -41.69354],
+        [-21.43871, -41.67847],
+        [-21.44589, -41.68011],
+        [-21.44986, -41.68219],
+        [-21.45523, -41.68163],
+        [-21.45928, -41.68259],
+        [-21.46539, -41.68099],
+        [-21.47537, -41.66841],
+        [-21.48503, -41.64241],
+        [-21.49088, -41.63503],
+        [-21.50058, -41.61432],
+        [-21.51158, -41.60538],
+        [-21.51458, -41.59343],
+        [-21.51421, -41.58796],
+        [-21.50955, -41.58265],
+        [-21.50348, -41.56990],
+        [-21.50163, -41.56062],
+        [-21.51331, -41.55102],
+        [-21.52579, -41.54546],
+        [-21.53099, -41.53889],
+        [-21.52976, -41.52962],
+        [-21.53089, -41.52535],
+        [-21.53936, -41.51188],
+        [-21.53987, -41.50615],
+        [-21.54420, -41.49721],
+        [-21.54397, -41.48376],
+        [-21.54554, -41.48002],
+        [-21.54555, -41.47430],
+        [-21.54810, -41.46761],
+        [-21.55231, -41.46699],
+        [-21.55583, -41.46431],
+        [-21.55571, -41.45960],
+        [-21.55860, -41.45365],
+        [-21.56283, -41.45032],
+        [-21.56536, -41.44620],
+        [-21.57697, -41.44452],
+        [-21.58554, -41.44049],
+        [-21.60121, -41.42535],
+        [-21.60956, -41.41918],
+        [-21.62935, -41.40886],
+        [-21.64130, -41.40632],
+        [-21.64840, -41.40183],
+        [-21.64960, -41.40008],
+        [-21.65126, -41.39025],
+        [-21.65584, -41.38494],
+        [-21.65853, -41.37291],
+        [-21.66148, -41.36983],
+        [-21.66832, -41.36708],
+        [-21.67571, -41.35551],
+        [-21.68380, -41.35545],
+        [-21.69540, -41.36020],
+        [-21.70290, -41.35890],
+        [-21.71028, -41.36097],
+        [-21.71303, -41.35952],
+        [-21.71686, -41.35325],
+        [-21.71970, -41.35083],
+        [-21.73300, -41.34415],
+        [-21.73681, -41.34105],
+        [-21.73831, -41.33257],
+        [-21.74188, -41.33014],
+        [-21.73544, -41.32537]
       ];
-      L.polyline(rota, {
+
+      const polyline = L.polyline(rotaRodoviaria, {
         color: '#dc2626',
-        weight: 3.5,
-        opacity: 0.8,
-        dashArray: '6, 6'
-      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
+        weight: 4,
+        opacity: 0.85,
+        dashArray: '7, 7'
+      }).addTo(map);
+
+      polyline.bindPopup(
+        "<strong>Corredor Rodoviário Homologado (BJI &rarr; Guarus)</strong><br>" +
+        "Traçado real pela malha rodoviária (RJ-230 e BR-356) conectando a entrada do IFF Bom Jesus do Itabapoana até o IFF Guarus.<br>" +
+        "Transporte de lotes triados acompanhados por Manifesto de Transporte de Resíduos (MTR) sob a <strong>Resolução INEA n.º 183/2019</strong>."
+      );
+
+      // Ajusta visualização aos limites da rota com padding
+      map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
     }
 
     window.addEventListener('load', initLeafletMap);
-
   </script>
 </body>
 </html>
