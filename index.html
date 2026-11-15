@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Descarte Consciente de E-Lixo e Baterias — Bom Jesus do Itabapoana</title>
+  <meta name="description" content="Guia de descarte de resíduos eletroeletrônicos e baterias em Bom Jesus do Itabapoana com base nas legislações PNRS, Conama 401 e Decreto 10.240.">
+  <style>
+    :root {
+      --primary: #1b5e20;
+      --primary-light: #4c8c4a;
+      --primary-dark: #003300;
+      --accent: #2e7d32;
+      --bg: #f8faf8;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --text-muted: #555e65;
+      --border: #e0e7e1;
+      --danger: #c62828;
+      --warning: #ef6c00;
+      --radius: 10px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--primary-light);
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      max-width: 780px;
+      margin: 0 auto;
+      opacity: 0.92;
+      font-size: 1.05rem;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .notice {
+      background: #e8f5e9;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .search-box {
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--accent);
+    }
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .filter-btn {
+      background: #edf2ed;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .item-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.09);
+    }
+    .item-cat {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .item-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #1a202c;
+    }
+    .item-risk {
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+      color: var(--danger);
+      background: #ffebee;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .item-prep {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .item-dest {
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .legis-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-top: 3rem;
+    }
+    .legis-section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .legis-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .legis-card {
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+      background: #fafdfa;
+    }
+    .legis-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .legis-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background: #1e261e;
+      color: #cbd5e1;
+      padding: 2.5rem 1.5rem;
+      margin-top: 3.5rem;
+      font-size: 0.9rem;
+    }
+    .footer-content {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .footer-links a {
+      color: #81c784;
+      text-decoration: none;
+      margin-right: 1.2rem;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">Iniciativa Acadêmica &amp; Cidadã</span>
+    <h1>Guia de Descarte de E-Lixo e Baterias</h1>
+    <p>Consulte como preparar e para onde destinar baterias, pilhas e aparelhos eletroeletrônicos em Bom Jesus do Itabapoana de acordo com a legislação ambiental brasileira.</p>
+  </header>
+
+  <main>
+    <div class="notice">
+      <strong>Atenção:</strong> Pilhas e baterias <strong>nunca</strong> devem ser jogadas no lixo comum ou em terrenos baldios. Seus metais pesados (lítio, chumbo, níquel, cádmio) contaminam o lençol freático e o Rio Itabapoana, e podem causar incêndios em caminhões de coleta.
+    </div>
+
+    <section class="search-box">
+      <input type="text" id="searchInput" placeholder="O que você deseja descartar? (ex: bateria de notebook, pilha palito, celular, no-break)...">
+      <div class="filter-tags">
+        <button class="filter-btn active" data-category="all">Todos os itens</button>
+        <button class="filter-btn" data-category="baterias">Baterias</button>
+        <button class="filter-btn" data-category="pilhas">Pilhas</button>
+        <button class="filter-btn" data-category="celulares">Celulares &amp; Tablets</button>
+        <button class="filter-btn" data-category="informatica">Informática &amp; Cabos</button>
+        <button class="filter-btn" data-category="eletro">Eletrodomésticos</button>
+      </div>
+    </section>
+
+    <section class="grid" id="itemsGrid">
+      <!-- Gerado via JavaScript -->
+    </section>
+
+    <section class="legis-section">
+      <h2>Legislação e Normas de Logística Reversa</h2>
+      <ul class="legis-list">
+        <li class="legis-card">
+          <strong>Lei Federal n.º 12.305/2010 (PNRS)</strong>
+          <p>Institui a Política Nacional de Resíduos Sólidos e a responsabilidade compartilhada pelo ciclo de vida dos produtos, obrigando fabricantes e revendedores a estruturar a logística reversa.</p>
+        </li>
+        <li class="legis-card">
+          <strong>Decreto Federal n.º 10.240/2020</strong>
+          <p>Regulamenta a logística reversa obrigatória de produtos eletroeletrônicos e seus componentes de uso doméstico em todo o território nacional.</p>
+        </li>
+        <li class="legis-card">
+          <strong>Resolução CONAMA n.º 401/2008</strong>
+          <p>Fixa limites máximos de chumbo, cádmio e mercúrio e determina que estabelecimentos que comercializam pilhas e baterias devem aceitar a devolução dos usados.</p>
+        </li>
+        <li class="legis-card">
+          <strong>Resolução INEA n.º 183/2019</strong>
+          <p>Estabelece diretrizes e metas de implementação do sistema de logística reversa no Estado do Rio de Janeiro.</p>
+        </li>
+        <li class="legis-card">
+          <strong>PMGIRS Bom Jesus do Itabapoana (2024)</strong>
+          <p>Diagnóstico municipal que aponta a ausência de aterro licenciado no município, o fechamento do lixão de Santa Isabel e a necessidade urgente de Pontos de Entrega Voluntária (PEV).</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <strong>IFF Bom Jesus do Itabapoana — Engenharia de Computação</strong><br>
+        Trabalho da disciplina Filosofia da Ciência e Tecnologia (Prof. Me. Rafael Tardin, 2026).
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/pedroiff0/guia-elixo" target="_blank" rel="noopener">Código no GitHub</a>
+        <a href="https://www.phrandrade.com" target="_blank" rel="noopener">Site Pessoal</a>
+        <a href="https://www.phrandrade.com/pt-br/projects/academic/elixo" target="_blank" rel="noopener">Projeto E-Lixo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const items = [
+      {
+        title: "Baterias de Íon de Lítio (Celular, Notebook, E-bike)",
+        category: "baterias",
+        risk: "Risco alto de incêndio por curto-circuito e liberação de cobalto e lítio no solo.",
+        prep: "Isole os terminais metálicos (polos + e -) com fita isolante ou fita crepe. Nunca fure, amasse ou tente abrir.",
+        dest: "Ponto de Entrega Voluntária (PEV), assistência técnica autorizada ou revenda do produto."
+      },
+      {
+        title: "Pilhas Comuns e Alcalinas (AA, AAA, 9V)",
+        category: "pilhas",
+        risk: "Lixiviação de metais pesados caso descartadas com lixo orgânico em aterros.",
+        prep: "Guarde em recipiente plástico seco (garrafa PET com tampa). Em pilhas de 9V, passe fita adesiva sobre os conectores.",
+        dest: "Coletores de pilhas em supermercados, agências dos Correios ou PEV do IFF."
+      },
+      {
+        title: "Baterias de Chumbo-Ácido (Carros, Motos, No-breaks)",
+        category: "baterias",
+        risk: "Extrema toxicidade por ácido sulfúrico corrosivo e chumbo bioacumulativo.",
+        prep: "Mantenha em posição vertical, sem vazar. Manuseie com cuidado, longe de calor.",
+        dest: "Entrega obrigatória à loja ou autocenter no momento da compra da bateria nova (sistema troca obrigatória)."
+      },
+      {
+        title: "Smartphones, Celulares Antigos e Tablets",
+        category: "celulares",
+        risk: "Contém ouro, prata, cobre e lítio; desperdício econômico e toxinas em caso de queima.",
+        prep: "Realize o backup e restaure as configurações de fábrica para apagar seus dados pessoais. Se a bateria for removível, remova e isole.",
+        dest: "Agências dos Correios (logística reversa nacional gratuita), campanhas do Circuito Verde ou PEV IFF."
+      },
+      {
+        title: "Placas de Circuito, Placas-mãe e Memórias",
+        category: "informatica",
+        risk: "Soldas de chumbo e estanho altamente poluentes ao solo e aos corpos d'água.",
+        prep: "Embale em caixas de papelão ou plástico para evitar fraturas que dispersem poeira tóxica.",
+        dest: "Laboratórios de informática do IFF (reaproveitamento didático), cooperativas de reciclagem ou PEV."
+      },
+      {
+        title: "Fontes de Alimentação, Carregadores e Cabos",
+        category: "informatica",
+        risk: "Plásticos de difícil degradação e fios de cobre que geram fumaça tóxica se queimados.",
+        prep: "Enrole os fios sem nós apertados. Separe de outros resíduos úmidos.",
+        dest: "Ponto de coleta de eletrônicos ou doação para o curso de Manutenção e Suporte em Informática."
+      },
+      {
+        title: "Monitores CRT (Tubo Antigo) e Telas LCD/LED",
+        category: "informatica",
+        risk: "Tubos CRT possuem até 2 kg de chumbo e fósforo no vidro interno; LCD possui lâmpadas de mercúrio.",
+        prep: "Nunca quebre o vidro ou a carcaça. Transporte com proteção frontal.",
+        dest: "Agendamento com a secretaria de meio ambiente municipal ou empresas de desmanche credenciadas."
+      },
+      {
+        title: "Pequenos Eletrodomésticos (Liquidificador, Ferro, Torradeira)",
+        category: "eletro",
+        risk: "Motores elétricos e resistências que podem ser 90% reciclados.",
+        prep: "Limpe resíduos de alimentos ou líquidos antes de entregar.",
+        dest: "Sucateiros licenciados, cooperativas de catadores locais ou logística reversa do fabricante."
+      }
+    ];
+
+    const grid = document.getElementById('itemsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    let currentCategory = 'all';
+
+    function renderItems(filterText = '', category = 'all') {
+      grid.innerHTML = '';
+      const text = filterText.toLowerCase();
+
+      const filtered = items.filter(item => {
+        const matchesCategory = (category === 'all' || item.category === category);
+        const matchesText = item.title.toLowerCase().includes(text) ||
+                            item.prep.toLowerCase().includes(text) ||
+                            item.dest.toLowerCase().includes(text);
+        return matchesCategory && matchesText;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #666;">Nenhum item encontrado com esse termo. Tente buscar por "pilha", "bateria" ou "celular".</div>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'item-card';
+        card.innerHTML = `
+          <div class="item-cat">${item.category}</div>
+          <h3 class="item-title">${item.title}</h3>
+          <div class="item-risk">⚠️ ${item.risk}</div>
+          <div class="item-prep"><strong>Como preparar:</strong> ${item.prep}</div>
+          <div class="item-dest">📍 <strong>Onde entregar:</strong> ${item.dest}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      renderItems(e.target.value, currentCategory);
+    });
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-category');
+        renderItems(searchInput.value, currentCategory);
+      });
+    });
+
+    renderItems();
+  </script>
+</body>
+</html>
