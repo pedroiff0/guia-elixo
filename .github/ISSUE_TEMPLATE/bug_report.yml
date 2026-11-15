@@ -1,0 +1,48 @@
+name: Relatar problema
+description: Algo não funciona como esperado
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Antes de enviar, procure nas issues abertas e fechadas. Vulnerabilidades não vão aqui: veja SECURITY.md.
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu
+      description: Descreva o problema com clareza.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Vá até '...'
+        2. Execute '...'
+        3. Veja o erro
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: input
+    id: versao
+    attributes:
+      label: Versão ou commit
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Sistema operacional, navegador, versões de runtime.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou capturas de tela
+      description: Remova qualquer dado sensível.
+      render: shell

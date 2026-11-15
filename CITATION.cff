@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Se este trabalho foi útil, cite-o usando os metadados abaixo."
+title: "Guia Prático de Descarte de Resíduos Eletroeletrônicos e Baterias (E-Lixo)"
+type: software
+authors:
+  - family-names: "Silva Neto"
+    given-names: "Bento Fernandes da"
+  - family-names: "Rainha Gomes"
+    given-names: "Bernardo"
+  - family-names: "Miranda de Oliveira"
+    given-names: "Pedro Henrique"
+  - family-names: "Rocha de Andrade"
+    given-names: "Pedro Henrique"
+    orcid: "https://orcid.org/0009-0004-9457-1906"
+repository-code: "https://github.com/pedroiff0/guia-elixo"
+url: "https://elixo.phrandrade.com"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-15"
+abstract: "Aplicação web interativa, catálogo toxicológico e projeto institucional de logística reversa e implantação de PEV de e-lixo e baterias no IFF Campus Bom Jesus do Itabapoana."
+keywords:
+  - e-lixo
+  - baterias
+  - logistica-reversa
+  - resíduos-sólidos
+  - filosofia-da-tecnologia
+  - iff-bom-jesus
