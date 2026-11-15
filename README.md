@@ -4,7 +4,8 @@
 [![Status](https://img.shields.io/badge/status-concluído-brightgreen?style=flat)](#status)
 [![HTML5](https://img.shields.io/badge/HTML5-Semântico-E34F26?style=flat&logo=html5&logoColor=white)](https://elixo.phrandrade.com)
 [![CSS3](https://img.shields.io/badge/CSS3-Responsivo-1572B6?style=flat&logo=css3&logoColor=white)](https://elixo.phrandrade.com)
-[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://elixo.phrandrade.com)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://elixo.phrandrade.com)
+[![Leaflet](https://img.shields.io/badge/Leaflet-1.9.4-199900?style=flat&logo=leaflet&logoColor=white)](https://elixo.phrandrade.com/#mapa)
 [![LaTeX](https://img.shields.io/badge/LaTeX-ReLaTeX-008080?style=flat&logo=latex&logoColor=white)](#tríade-documental-no-relatex)
 [![IFF](https://img.shields.io/badge/IFF-Campus%20Bom%20Jesus-1b5e20?style=flat)](https://portal1.iff.edu.br/nossos-campi/bom-jesus-do-itabapoana)
 
@@ -267,7 +268,7 @@ Para dúvidas e esclarecimentos sobre a pesquisa ou aplicação web, consulte [S
 
 ---
 
-## Autores
+## Autores & Equipe Discente
 
 <div align="center">
 
@@ -277,6 +278,19 @@ Para dúvidas e esclarecimentos sobre a pesquisa ou aplicação web, consulte [S
     <td align="center"><img src="https://ui-avatars.com/api/?name=Bernardo+Rainha&background=1b5e20&color=fff&size=140" width="96" height="96" alt="Bernardo Rainha" /><br /><sub><b>Bernardo Rainha Gomes</b></sub><br />Diagnóstico &amp; Levantamento PMGIRS<br /><code>b.rainha@gsuite.iff.edu.br</code></td>
     <td align="center"><img src="https://ui-avatars.com/api/?name=Pedro+Miranda&background=1b5e20&color=fff&size=140" width="96" height="96" alt="Pedro Miranda" /><br /><sub><b>Pedro Henrique Miranda de Oliveira</b></sub><br />Roteiro de Oratória &amp; Articulação<br /><code>p.h.miranda1712@gmail.com</code></td>
     <td align="center"><a href="https://github.com/pedroiff0"><img src="https://github.com/pedroiff0.png?size=140" width="96" height="96" alt="Pedro Henrique Rocha de Andrade" /><br /><sub><b>Pedro Henrique Rocha de Andrade</b></sub></a><br />Arquitetura Web &amp; Modelagem do PEV<br /><code>pedroiff0@gmail.com</code></td>
+  </tr>
+</table>
+
+</div>
+
+### Professores Orientador e Patrono (Integra IFF)
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="https://ui-avatars.com/api/?name=Rafael+Tardin&background=0d3311&color=fff&size=160" width="96" height="96" alt="Prof. Rafael Tardin" /><br /><sub><b>Prof. Me. Rafael Ferreira Tardin da Silva</b></sub><br />Professor Orientador (Filosofia da Ciência e Tecnologia / IFF)<br /><a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-ferreira-tardin-da-silva/rafael%20tardin"><b>Perfil Oficial no Integra IFF</b></a></td>
+    <td align="center" width="50%"><img src="https://ui-avatars.com/api/?name=Rafael+Gardoni&background=0d3311&color=fff&size=160" width="96" height="96" alt="Prof. Rafael Gardoni" /><br /><sub><b>Prof. Dr. Rafael Artur de Paiva Gardoni</b></sub><br />Professor Patrono &amp; Colaborador (Engenharia / IFF)<br /><a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni"><b>Perfil Oficial no Integra IFF</b></a></td>
   </tr>
 </table>
 
@@ -312,10 +326,26 @@ Distribuído sob a licença **MIT** para código-fonte (veja [LICENSE](LICENSE))
 
 <div align="center">
 
-<img src="https://api.iconify.design/mdi/star-shooting.svg?color=%231b5e20" width="20" valign="middle" /> *"Responsabilidade técnica a favor do ambiente regional."*
+<a href="https://portfolio.phrandrade.com"><img src="https://github.com/pedroiff0.png?size=96" width="48" height="48" style="border-radius:50%; border:2px solid #166534;" alt="Pedro Henrique Rocha de Andrade" /></a>
 
-<br>
+<br />
 
-<sub>Instituto Federal Fluminense (IFF) · Campus Bom Jesus do Itabapoana · Engenharia de Computação</sub>
+<b>Pedro Henrique Rocha de Andrade</b><br />
+<sub>Engenharia de Computação · Instituto Federal Fluminense (IFF)</sub><br />
+<sub>Pesquisador de Astronomia &amp; Desenvolvedor de Software</sub>
+
+<br />
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-phrandrade.com-1b5e20?style=flat-square&logo=googlechrome&logoColor=white)](https://portfolio.phrandrade.com)
+[![GitHub](https://img.shields.io/badge/GitHub-pedroiff0-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/pedroiff0)
+[![Website](https://img.shields.io/badge/Guia_E--Lixo-elixo.phrandrade.com-2e7d32?style=flat-square&logo=safari&logoColor=white)](https://elixo.phrandrade.com)
+
+<br />
+
+*"Responsabilidade técnica a favor do ambiente regional."*
+
+<br />
+
+<sub>© 2026 Instituto Federal Fluminense · Campus Bom Jesus do Itabapoana</sub>
 
 </div>

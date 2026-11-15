@@ -581,7 +581,249 @@
       body { padding-bottom: 2rem; }
       .mobile-tab-bar { display: none; }
     }
+  
+    /* Otimização responsiva para celular e desktop */
+    main.app-body {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 1rem 1rem 3rem 1rem;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 0.75rem;
+      padding-bottom: 4px;
+    }
+
+    .chip {
+      min-height: 40px;
+      padding: 8px 14px;
+      font-size: 13.5px;
+      font-weight: 500;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .chip.active {
+      background: var(--iff-primary);
+      color: #ffffff;
+      border-color: var(--iff-primary);
+    }
+
+    #mapa-leaflet {
+      height: 420px;
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      z-index: 1;
+      margin: 0.8rem 0;
+    }
+
+    .leaflet-popup-content-wrapper {
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .professors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .prof-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .prof-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--iff-primary-light);
+    }
+
+    .prof-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--iff-primary-light);
+      margin-bottom: 0.75rem;
+      object-fit: cover;
+    }
+
+    .prof-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--iff-primary-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .prof-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--iff-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.4rem;
+    }
+
+    .prof-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+    }
+
+    .prof-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: var(--iff-primary);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .prof-link-btn:hover {
+      background: var(--iff-primary-dark);
+    }
+
+    /* Stacks com ícones padrão README */
+    .stacks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 0.8rem;
+    }
+
+    .stack-chip {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stack-chip svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .stack-chip span {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Rodapé marca registrada do perfil */
+    .site-footer {
+      background: #0d2810;
+      color: #e2e8f0;
+      padding: 2.2rem 1rem 5rem 1rem;
+      margin-top: 3rem;
+      border-top: 3px solid var(--iff-accent);
+      font-size: 0.86rem;
+    }
+
+    .footer-content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 1.2rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #4ade80;
+    }
+
+    .footer-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-link-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.08);
+      color: #cbd5e1;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .footer-link-badge:hover {
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
@@ -642,103 +884,37 @@
     <div class="accordion-section" id="mapa">
       <div class="accordion-title">
         <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-        Mapa Regional dos Campi do IFF &amp; Eixo Logístico
+        Mapa Regional Interativo dos Campi do IFF &amp; Eixo Logístico
       </div>
-      <p class="accordion-desc">Visualização territorial do fluxo de logística reversa: da triagem primária em Bom Jesus do Itabapoana até o polo de desmonte e reciclagem do Circuito Verde em Campos dos Goytacazes.</p>
+      <p class="accordion-desc">Visualização geográfica georreferenciada via Leaflet.js e OpenStreetMap: do Ponto de Entrega Voluntária em Bom Jesus do Itabapoana até o polo de desmonte e reciclagem do Projeto Circuito Verde em Campos dos Goytacazes.</p>
 
-      <div class="map-container">
-        <div class="map-svg-wrap">
-          <svg class="map-svg" viewBox="0 0 540 280" width="100%">
-            <!-- Fundo Esquemático do Noroeste e Norte Fluminense -->
-            <rect width="540" height="280" fill="#f8fafc" rx="8"/>
-            
-            <!-- Manchas regionais -->
-            <path d="M 40,30 Q 180,20 260,80 Q 220,170 120,160 Z" fill="#dcfce7" stroke="#86efac" stroke-width="1.5" opacity="0.7"/>
-            <text x="60" y="55" font-size="11" font-weight="700" fill="#166534" font-family="sans-serif">NOROESTE FLUMINENSE</text>
-            
-            <path d="M 260,80 Q 420,50 500,120 Q 480,240 280,220 Q 220,170 260,80 Z" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5" opacity="0.7"/>
-            <text x="350" y="80" font-size="11" font-weight="700" fill="#3730a3" font-family="sans-serif">NORTE FLUMINENSE</text>
+      <div id="mapa-leaflet"></div>
 
-            <!-- Rio Itabapoana esquemático -->
-            <path d="M 30,70 Q 90,85 160,95 T 260,110" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4,2"/>
-            <text x="50" y="105" font-size="9" fill="#0284c7" font-style="italic" font-family="sans-serif">Rio Itabapoana (Divisa RJ/ES)</text>
-
-            <!-- Rota Rodoviária BJI <-> Guarus (67 km) -->
-            <path d="M 120,90 Q 210,130 350,150" fill="none" stroke="#b91c1c" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M 120,90 Q 210,130 350,150" fill="none" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="6,4"/>
-            <rect x="180" y="132" width="124" height="22" rx="4" fill="#ffffff" stroke="#b91c1c" stroke-width="1"/>
-            <text x="186" y="147" font-size="9.5" font-weight="700" fill="#991b1b" font-family="sans-serif">Rota Homologada: 67 km</text>
-
-            <!-- Ponto 1: IFF Campus Bom Jesus do Itabapoana -->
-            <g transform="translate(120, 90)">
-              <circle r="14" fill="#22c55e" opacity="0.3"/>
-              <circle r="8" fill="#15803d"/>
-              <circle r="4" fill="#ffffff"/>
-              <rect x="-80" y="-36" width="160" height="26" rx="4" fill="#ffffff" stroke="#15803d" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
-              <text x="0" y="-23" font-size="9.5" font-weight="700" fill="#14532d" text-anchor="middle" font-family="sans-serif">IFF Campus Bom Jesus</text>
-              <text x="0" y="-13" font-size="8" fill="#475569" text-anchor="middle" font-family="sans-serif">PEV e Triagem Primaria</text>
-            </g>
-
-            <!-- Ponto 2: IFF Campus Guarus (Circuito Verde) -->
-            <g transform="translate(350, 150)">
-              <circle r="16" fill="#3b82f6" opacity="0.3"/>
-              <circle r="9" fill="#1d4ed8"/>
-              <circle r="4" fill="#ffffff"/>
-              <rect x="-85" y="14" width="170" height="28" rx="4" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
-              <text x="0" y="27" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IFF Campus Guarus (Campos)</text>
-              <text x="0" y="38" font-size="8" font-weight="600" fill="#166534" text-anchor="middle" font-family="sans-serif">Projeto Circuito Verde (Destino)</text>
-            </g>
-
-            <!-- Ponto 3: IFF Campus Campos Centro -->
-            <g transform="translate(370, 185)">
-              <circle r="6" fill="#64748b"/>
-              <text x="382" y="189" font-size="8.5" fill="#334155" font-weight="600" font-family="sans-serif">IFF Campos Centro</text>
-            </g>
-
-            <!-- Outros Campi Vizinhos -->
-            <g transform="translate(100, 140)">
-              <circle r="5" fill="#94a3b8"/>
-              <text x="110" y="144" font-size="8" fill="#475569" font-family="sans-serif">IFF Itaperuna</text>
-            </g>
-            <g transform="translate(60, 175)">
-              <circle r="5" fill="#94a3b8"/>
-              <text x="70" y="179" font-size="8" fill="#475569" font-family="sans-serif">IFF S. A. de Pádua</text>
-            </g>
-            <g transform="translate(160, 170)">
-              <circle r="5" fill="#94a3b8"/>
-              <text x="170" y="174" font-size="8" fill="#475569" font-family="sans-serif">IFF Cambuci</text>
-            </g>
-            <g transform="translate(430, 210)">
-              <circle r="5" fill="#94a3b8"/>
-              <text x="440" y="214" font-size="8" fill="#475569" font-family="sans-serif">IFF São João da Barra</text>
-            </g>
-          </svg>
+      <div class="map-legend">
+        <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.6rem;">
+          <strong>O Eixo da Proposta:</strong> A rota de 67 km interliga o ponto de coleta do Campus Bom Jesus diretamente às oficinas do Campus Guarus, garantindo destinação ambientalmente homologada com Manifesto de Transporte de Resíduos (MTR/INEA).
         </div>
 
-        <div class="map-legend">
-          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
-            <strong>O Eixo da Proposta:</strong> A rota de 67 km interliga o ponto de coleta de Bom Jesus do Itabapoana diretamente às oficinas especializadas do Campus Guarus, garantindo destinação ambientalmente homologada com Manifesto de Transporte de Resíduos (Sistema MTR do INEA).
+        <div class="campi-grid">
+          <div class="campus-card highlight">
+            <strong>IFF Campus Bom Jesus do Itabapoana</strong>
+            <span>Origem: PEV comunitário com triagem rápida sem desmonte (Resolução INEA 183/2019).</span>
           </div>
-
-          <div class="campi-grid">
-            <div class="campus-card highlight">
-              <strong>IFF Campus Bom Jesus do Itabapoana</strong>
-              <span>Origem: PEV comunitário com triagem rápida sem desmonte (Resolução INEA 183/2019).</span>
-            </div>
-            <div class="campus-card highlight">
-              <strong>IFF Campus Guarus (Campos dos Goytacazes)</strong>
-              <span>Destino: Projeto Circuito Verde, responsável pelo desmonte técnico, pesagem e envio a recicladoras parceiras.</span>
-            </div>
-            <div class="campus-card">
-              <strong>IFF Campus Itaperuna &amp; Noroeste</strong>
-              <span>Pólos de apoio regional para extensão e expansão futura da malha de coleta escolar.</span>
-            </div>
-            <div class="campus-card">
-              <strong>CTR Campos (Aterro Consorciado)</strong>
-              <span>Destino oficial do lixo comum municipal pelo PMGIRS (para onde NÃO devem ir eletrônicos e baterias).</span>
-            </div>
+          <div class="campus-card highlight">
+            <strong>IFF Campus Guarus (Campos dos Goytacazes)</strong>
+            <span>Destino: Projeto Circuito Verde, responsável pelo desmonte técnico, pesagem e reciclagem.</span>
+          </div>
+          <div class="campus-card">
+            <strong>IFF Campus Campos Centro</strong>
+            <span>Polo Acadêmico e suporte à gestão regional de resíduos.</span>
+          </div>
+          <div class="campus-card">
+            <strong>CTR Campos (Aterro Consorciado)</strong>
+            <span>Destino atual de 0,724 kg/hab/dia do rejeito urbano indiferenciado de Bom Jesus.</span>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
 
@@ -774,28 +950,28 @@
 
       <div class="law-item">
         <h4>Resolução CONAMA n.º 401/2008</h4>
-        <p>Fixa teores máximos de chumbo, cádmio e mercúrio para pilhas e baterias, e obriga a devolução pós-consumo aos fabricantes e comerciantes.</p>
+        <p>Publicação Oficial: Diário Oficial da União (DOU de 05/11/2008, Seção 1, pág. 108-109). Fixa teores máximos de chumbo, cádmio e mercúrio para pilhas e baterias, e impõe a obrigação de devolução pós-consumo aos fabricantes e comerciantes.</p>
         <div class="law-links-row">
-          <a href="docs/leis/resolucao-conama-401-2008.pdf" target="_blank" class="law-item-btn">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Baixar PDF Oficial
+          <a href="https://conama.mma.gov.br/" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Portal Oficial CONAMA / MMA
           </a>
           <a href="https://www.legisweb.com.br/legislacao/?id=72929" target="_blank" rel="noopener" class="law-item-btn secondary">
-            Consulta LegisWeb
+            Texto Integral no LegisWeb
           </a>
         </div>
       </div>
 
       <div class="law-item">
         <h4>Resolução INEA n.º 183/2019 (Estado do Rio de Janeiro)</h4>
-        <p>Dispensa licenciamento ambiental para Pontos de Entrega Voluntária (PEV) de logística reversa que realizem triagem limpa sem desmonte industrial.</p>
+        <p>Publicação Oficial: Diário Oficial do Estado do Rio de Janeiro (DOERJ de 10/10/2019). Dispensa licenciamento ambiental para Pontos de Entrega Voluntária (PEV) de logística reversa que realizem triagem primária limpa sem desmonte industrial.</p>
         <div class="law-links-row">
-          <a href="docs/leis/resolucao-inea-183-2019.pdf" target="_blank" class="law-item-btn">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Baixar PDF Oficial
+          <a href="http://www.inea.rj.gov.br" target="_blank" rel="noopener" class="law-item-btn">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Portal Oficial do INEA/RJ
           </a>
           <a href="https://www.legisweb.com.br/legislacao/?id=388039" target="_blank" rel="noopener" class="law-item-btn secondary">
-            Consulta LegisWeb
+            Texto Integral no LegisWeb
           </a>
         </div>
       </div>
@@ -870,13 +1046,15 @@
     </div>
 
     <!-- SEÇÃO AUTORES & EQUIPE (ESTILO MIDDLE-EARTH) -->
+        <!-- SEÇÃO AUTORES, PROFESSORES & STACK (ESTILO MIDDLE-EARTH) -->
     <div class="accordion-section" id="autores">
       <div class="accordion-title">
         <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Autores &amp; Orientação
+        Equipe Discente &amp; Corpo Docente
       </div>
-      <p class="accordion-desc">Equipe discente e docente da disciplina Filosofia da Ciência e Tecnologia (Engenharia de Computação, IFF BJI).</p>
+      <p class="accordion-desc">Equipe de pesquisa, desenvolvimento e orientação da disciplina Filosofia da Ciência e Tecnologia (Engenharia de Computação, IFF Campus Bom Jesus do Itabapoana).</p>
 
+      <!-- AUTORES DISCENTES -->
       <div class="authors-grid">
         <div class="author-card-box">
           <img class="author-avatar" src="https://ui-avatars.com/api/?name=Bento+Neto&background=1b5e20&color=fff&size=140" alt="Bento Fernandes">
@@ -907,59 +1085,127 @@
         </div>
       </div>
 
-      <div style="margin-top: 1rem; padding: 0.85rem; background: #fafbfa; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
-        <div style="margin-bottom: 0.5rem;">
-          <strong>Professor Orientador:</strong> Prof. Me. Rafael Ferreira Tardin da Silva (Mestre em Filosofia / IFF)<br>
-          <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-ferreira-tardin-da-silva/rafael%20tardin" target="_blank" rel="noopener" style="color: var(--iff-primary); text-decoration: underline; font-weight: 500;">
-            Perfil Institucional Integra IFF
-          </a>
-        </div>
-        <div>
-          <strong>Professor Patrono:</strong> Prof. Dr. Rafael Artur de Paiva Gardoni (Doutor em Engenharia / IFF)<br>
-          <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni" target="_blank" rel="noopener" style="color: var(--iff-primary); text-decoration: underline; font-weight: 500;">
-            Perfil Institucional Integra IFF
-          </a>
+      <!-- CARDS DEDICADOS DOS PROFESSORES -->
+      <div style="margin-top: 1.5rem;">
+        <h4 style="font-size: 0.96rem; font-weight: 700; color: var(--iff-primary-dark); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+          <svg class="svg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Professores Orientador e Patrono (Integra IFF)
+        </h4>
+
+        <div class="professors-grid">
+          <div class="prof-card">
+            <img class="prof-avatar" src="https://ui-avatars.com/api/?name=Rafael+Tardin&background=0d3311&color=fff&size=160" alt="Prof. Rafael Tardin">
+            <div class="prof-name">Prof. Me. Rafael Ferreira Tardin da Silva</div>
+            <div class="prof-role">Professor Orientador</div>
+            <div class="prof-desc">Mestre em Filosofia. Docente de Filosofia da Ciência e Tecnologia no Instituto Federal Fluminense, orientando a dimensão epistemológica e ética do projeto.</div>
+            <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-ferreira-tardin-da-silva/rafael%20tardin" target="_blank" rel="noopener" class="prof-link-btn">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Perfil Oficial no Integra IFF
+            </a>
+          </div>
+
+          <div class="prof-card">
+            <img class="prof-avatar" src="https://ui-avatars.com/api/?name=Rafael+Gardoni&background=0d3311&color=fff&size=160" alt="Prof. Rafael Gardoni">
+            <div class="prof-name">Prof. Dr. Rafael Artur de Paiva Gardoni</div>
+            <div class="prof-role">Professor Patrono &amp; Colaborador</div>
+            <div class="prof-desc">Doutor em Engenharia. Docente do Instituto Federal Fluminense, apoiando o embasamento técnico e a viabilidade dos fluxos de triagem e logística reversa regional.</div>
+            <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni" target="_blank" rel="noopener" class="prof-link-btn">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Perfil Oficial no Integra IFF
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- TABELA DE TECNOLOGIAS E STACK -->
-      <div style="margin-top: 1.2rem;">
-        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--iff-primary-dark); margin-bottom: 0.4rem;">Tecnologias Utilizadas no Projeto</h4>
-        <table class="stack-table">
-          <thead>
-            <tr>
-              <th>Camada</th>
-              <th>Tecnologia</th>
-              <th>Aplicação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Interface Cidadã</td>
-              <td>HTML5 Semântico, CSS3 e JS Vanilla</td>
-              <td>Aplicação web responsiva, busca instantânea e filtros</td>
-            </tr>
-            <tr>
-              <td>Editoração Acadêmica</td>
-              <td>LaTeX / ReLaTeX (Classes IFF)</td>
-              <td>Relatório técnico ABNT, slides de apresentação e panfleto A4</td>
-            </tr>
-            <tr>
-              <td>Georreferenciamento</td>
-              <td>SVG Vetorial Nativo</td>
-              <td>Mapa esquemático territorial dos campi e rota logística de 67 km</td>
-            </tr>
-            <tr>
-              <td>Hospedagem &amp; Deploy</td>
-              <td>GitHub Pages e Domínio Próprio</td>
-              <td>Distribuição estática em alta velocidade em elixo.phrandrade.com</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- STACKS DE TECNOLOGIAS EM ÍCONES PADRÃO README -->
+      <div style="margin-top: 1.8rem;">
+        <h4 style="font-size: 0.96rem; font-weight: 700; color: var(--iff-primary-dark); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+          <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Tecnologias &amp; Stacks Utilizadas (Padrão Repositório)
+        </h4>
+
+        <div class="stacks-grid">
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#E34F26"><path d="M12 2L3 5l2 15 7 2 7-2 2-15-9-3zm0 2.2l6.8 2.3-1.6 12-5.2 1.5-5.2-1.5L5.2 6.5 12 4.2z"/></svg>
+            <span>HTML5 Semântico</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#1572B6"><path d="M12 2L3 5l2 15 7 2 7-2 2-15-9-3zm0 2.2l6.8 2.3-1.6 12-5.2 1.5-5.2-1.5L5.2 6.5 12 4.2z"/></svg>
+            <span>CSS3 Responsivo</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#F7DF1E"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M6 18h3v-8H6v8zm6-11v11h3v-6c0-1.5 1-2 2-2s1 .5 1 2v6h3v-7c0-2.5-1.5-4-3.5-4-1.5 0-2.5 1-3 2h-.5V7H12z" fill="#000"/></svg>
+            <span>JavaScript ES6+</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#199900"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <span>Leaflet.js</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#7EBC6F"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>OpenStreetMap</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#008080"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6z"/></svg>
+            <span>LaTeX / ReLaTeX</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#2496ED"><path d="M13.98 10.02h2.24v2.24h-2.24v-2.24zm-3.36 0h2.24v2.24h-2.24v-2.24zm-3.36 0h2.24v2.24H7.26v-2.24zm10.08-3.36h2.24v2.24h-2.24V6.66zm-3.36 0h2.24v2.24h-2.24V6.66zm-3.36 0h2.24v2.24h-2.24V6.66z"/></svg>
+            <span>Docker Engine</span>
+          </div>
+          <div class="stack-chip">
+            <svg viewBox="0 0 24 24" fill="#2ea44f"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span>GitHub Pages</span>
+          </div>
+        </div>
       </div>
     </div>
 
   </main>
+
+  <!-- RODAPÉ MARCA REGISTRADA (PADRÃO PERFIL README PHRANDRADE) -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img class="footer-avatar" src="https://github.com/pedroiff0.png?size=96" alt="Pedro Henrique Rocha de Andrade">
+          <div>
+            <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem;">Pedro Henrique Rocha de Andrade</div>
+            <div style="font-size: 0.78rem; color: #86efac;">Engenharia de Computação · Pesquisador &amp; Desenvolvedor</div>
+          </div>
+        </div>
+
+        <div class="footer-links-row">
+          <a href="https://portfolio.phrandrade.com" target="_blank" rel="noopener" class="footer-link-badge">
+            <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Portfólio
+          </a>
+          <a href="https://github.com/pedroiff0" target="_blank" rel="noopener" class="footer-link-badge">
+            <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://github.com/pedroiff0/guia-elixo" target="_blank" rel="noopener" class="footer-link-badge">
+            <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Repositório
+          </a>
+          <a href="https://elixo.phrandrade.com" class="footer-link-badge">
+            <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            elixo.phrandrade.com
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Instituto Federal Fluminense (IFF) · Bacharelado em Engenharia de Computação.<br>
+          Desenvolvido com padrão estrito de responsabilidade ambiental e excelência técnica.
+        </div>
+        <div style="font-family: monospace; font-size: 0.74rem; color: #64748b;">
+          versao 1.2.0 · hosting via github-pages
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- BARRA DE NAVEGAÇÃO INFERIOR PARA CELULAR -->
   <nav class="mobile-tab-bar">
@@ -1360,6 +1606,107 @@
     searchInput.addEventListener("input", (e) => {
       searchQuery = e.target.value;
       renderItems();
+
+    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
+    function initLeafletMap() {
+      if (typeof L === 'undefined') return;
+      const mapEl = document.getElementById('mapa-leaflet');
+      if (!mapEl) return;
+
+      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      const locais = [
+        {
+          name: "IFF Campus Bom Jesus do Itabapoana",
+          coords: [-21.1394, -41.6789],
+          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
+          color: "#166534"
+        },
+        {
+          name: "IFF Campus Guarus (Campos dos Goytacazes)",
+          coords: [-21.7315, -41.3190],
+          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
+          color: "#1d4ed8"
+        },
+        {
+          name: "IFF Campus Campos Centro",
+          coords: [-21.7545, -41.3244],
+          role: "Polo Acadêmico e de Extensão Tecnológica",
+          color: "#475569"
+        },
+        {
+          name: "IFF Campus Itaperuna",
+          coords: [-21.2062, -41.8798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Santo Antônio de Pádua",
+          coords: [-21.5367, -42.1798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Cambuci",
+          coords: [-21.5750, -41.9120],
+          role: "Ponto Regional de Apoio",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus São João da Barra",
+          coords: [-21.6410, -41.0510],
+          role: "Ponto Regional Norte Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "CTR Campos (Aterro Sanitário Consorciado)",
+          coords: [-21.7850, -41.3650],
+          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
+          color: "#b91c1c"
+        },
+        {
+          name: "Agência Correios Bom Jesus do Itabapoana",
+          coords: [-21.1350, -41.6750],
+          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
+          color: "#eab308"
+        }
+      ];
+
+      locais.forEach(loc => {
+        const marker = L.circleMarker(loc.coords, {
+          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
+          fillColor: loc.color,
+          color: "#ffffff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.85
+        }).addTo(map);
+
+        marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
+      });
+
+      // Linha rodoviária BJI <-> Guarus (67 km)
+      const rota = [
+        [-21.1394, -41.6789],
+        [-21.3200, -41.5200],
+        [-21.5100, -41.4100],
+        [-21.7315, -41.3190]
+      ];
+      L.polyline(rota, {
+        color: '#dc2626',
+        weight: 3.5,
+        opacity: 0.8,
+        dashArray: '6, 6'
+      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
+    }
+
+    window.addEventListener('load', initLeafletMap);
+
     });
 
     chips.forEach(chip => {
@@ -1368,11 +1715,213 @@
         chip.classList.add("active");
         currentFilter = chip.getAttribute("data-cat");
         renderItems();
+
+    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
+    function initLeafletMap() {
+      if (typeof L === 'undefined') return;
+      const mapEl = document.getElementById('mapa-leaflet');
+      if (!mapEl) return;
+
+      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      const locais = [
+        {
+          name: "IFF Campus Bom Jesus do Itabapoana",
+          coords: [-21.1394, -41.6789],
+          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
+          color: "#166534"
+        },
+        {
+          name: "IFF Campus Guarus (Campos dos Goytacazes)",
+          coords: [-21.7315, -41.3190],
+          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
+          color: "#1d4ed8"
+        },
+        {
+          name: "IFF Campus Campos Centro",
+          coords: [-21.7545, -41.3244],
+          role: "Polo Acadêmico e de Extensão Tecnológica",
+          color: "#475569"
+        },
+        {
+          name: "IFF Campus Itaperuna",
+          coords: [-21.2062, -41.8798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Santo Antônio de Pádua",
+          coords: [-21.5367, -42.1798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Cambuci",
+          coords: [-21.5750, -41.9120],
+          role: "Ponto Regional de Apoio",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus São João da Barra",
+          coords: [-21.6410, -41.0510],
+          role: "Ponto Regional Norte Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "CTR Campos (Aterro Sanitário Consorciado)",
+          coords: [-21.7850, -41.3650],
+          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
+          color: "#b91c1c"
+        },
+        {
+          name: "Agência Correios Bom Jesus do Itabapoana",
+          coords: [-21.1350, -41.6750],
+          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
+          color: "#eab308"
+        }
+      ];
+
+      locais.forEach(loc => {
+        const marker = L.circleMarker(loc.coords, {
+          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
+          fillColor: loc.color,
+          color: "#ffffff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.85
+        }).addTo(map);
+
+        marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
+      });
+
+      // Linha rodoviária BJI <-> Guarus (67 km)
+      const rota = [
+        [-21.1394, -41.6789],
+        [-21.3200, -41.5200],
+        [-21.5100, -41.4100],
+        [-21.7315, -41.3190]
+      ];
+      L.polyline(rota, {
+        color: '#dc2626',
+        weight: 3.5,
+        opacity: 0.8,
+        dashArray: '6, 6'
+      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
+    }
+
+    window.addEventListener('load', initLeafletMap);
+
       });
     });
 
     // RENDER INICIAL
     renderItems();
+
+    // INICIALIZAÇÃO DO MAPA LEAFLET OFICIAL
+    function initLeafletMap() {
+      if (typeof L === 'undefined') return;
+      const mapEl = document.getElementById('mapa-leaflet');
+      if (!mapEl) return;
+
+      const map = L.map('mapa-leaflet', { scrollWheelZoom: false }).setView([-21.45, -41.50], 9);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      const locais = [
+        {
+          name: "IFF Campus Bom Jesus do Itabapoana",
+          coords: [-21.1394, -41.6789],
+          role: "Origem: PEV de Triagem Comunitária e Coleta de Baterias",
+          color: "#166534"
+        },
+        {
+          name: "IFF Campus Guarus (Campos dos Goytacazes)",
+          coords: [-21.7315, -41.3190],
+          role: "Destino: Projeto Circuito Verde (Desmonte Técnico & Reciclagem)",
+          color: "#1d4ed8"
+        },
+        {
+          name: "IFF Campus Campos Centro",
+          coords: [-21.7545, -41.3244],
+          role: "Polo Acadêmico e de Extensão Tecnológica",
+          color: "#475569"
+        },
+        {
+          name: "IFF Campus Itaperuna",
+          coords: [-21.2062, -41.8798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Santo Antônio de Pádua",
+          coords: [-21.5367, -42.1798],
+          role: "Ponto Regional Noroeste Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus Cambuci",
+          coords: [-21.5750, -41.9120],
+          role: "Ponto Regional de Apoio",
+          color: "#64748b"
+        },
+        {
+          name: "IFF Campus São João da Barra",
+          coords: [-21.6410, -41.0510],
+          role: "Ponto Regional Norte Fluminense",
+          color: "#64748b"
+        },
+        {
+          name: "CTR Campos (Aterro Sanitário Consorciado)",
+          coords: [-21.7850, -41.3650],
+          role: "Destino final rodoviário do rejeito indiferenciado de BJI (67 km)",
+          color: "#b91c1c"
+        },
+        {
+          name: "Agência Correios Bom Jesus do Itabapoana",
+          coords: [-21.1350, -41.6750],
+          role: "Ponto de logística reversa de eletroeletrônicos (exclui pilhas/baterias)",
+          color: "#eab308"
+        }
+      ];
+
+      locais.forEach(loc => {
+        const marker = L.circleMarker(loc.coords, {
+          radius: loc.color === "#166534" || loc.color === "#1d4ed8" ? 10 : 7,
+          fillColor: loc.color,
+          color: "#ffffff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.85
+        }).addTo(map);
+
+        marker.bindPopup(`<strong>${loc.name}</strong><br><span style="font-size: 0.8rem; color: #475569;">${loc.role}</span>`);
+      });
+
+      // Linha rodoviária BJI <-> Guarus (67 km)
+      const rota = [
+        [-21.1394, -41.6789],
+        [-21.3200, -41.5200],
+        [-21.5100, -41.4100],
+        [-21.7315, -41.3190]
+      ];
+      L.polyline(rota, {
+        color: '#dc2626',
+        weight: 3.5,
+        opacity: 0.8,
+        dashArray: '6, 6'
+      }).addTo(map).bindPopup("<strong>Corredor Rodoviário Homologado (67 km)</strong><br>Transporte com Manifesto MTR do INEA.");
+    }
+
+    window.addEventListener('load', initLeafletMap);
+
   </script>
 </body>
 </html>
