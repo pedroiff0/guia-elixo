@@ -938,7 +938,7 @@
       <nav class="desktop-nav" aria-label="Navegação Principal Desktop">
         <a href="#busca-rapida" class="desktop-nav-link">
           <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Catálogo (34 Itens)
+          Catálogo (65 Itens)
         </a>
         <a href="#mapa" class="desktop-nav-link">
           <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
@@ -981,11 +981,12 @@
       <button class="chip-btn" data-cat="informatica">Informática &amp; Peças</button>
       <button class="chip-btn" data-cat="eletro">Eletrodomésticos</button>
       <button class="chip-btn" data-cat="lampadas">Lâmpadas</button>
+      <button class="chip-btn" data-cat="especiais">Fora do PEV</button>
     </div>
 
     <!-- CONTAGEM DE RESULTADOS -->
     <div class="results-info">
-      <span id="results-count">Exibindo todos os 34 itens cadastrados</span>
+      <span id="results-count">Exibindo todos os 65 itens cadastrados</span>
       <span style="font-size: 0.75rem; color: #94a3b8;">Base técnica: CONAMA, PNRS e INEA</span>
     </div>
 
@@ -1147,7 +1148,7 @@
           <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           Em Avaliação Acadêmica pela Banca
         </div>
-        <p style="margin: 0 0 0.65rem 0;">Os arquivos completos em PDF (Relatório Técnico de 18 páginas, 36 Slides da Apresentação, Roteiro de Oratória e Panfleto A4) foram submetidos para defesa oficial. O acesso público integral será liberado após a apresentação da disciplina no portfólio oficial.</p>
+        <p style="margin: 0 0 0.65rem 0;">Os arquivos completos em PDF (Relatório Técnico ABNT, 36 Slides da Apresentação, Roteiro de Oratória e Panfleto A4) foram submetidos para defesa oficial. O acesso público integral será liberado após a apresentação da disciplina no portfólio oficial.</p>
         <a href="https://portfolio.phrandrade.com" target="_blank" rel="noopener" class="law-item-btn" style="width: 100%; justify-content: center; padding: 0.65rem;">
           <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Acompanhar no Portfólio (portfolio.phrandrade.com)
@@ -1216,7 +1217,7 @@
 
           <div class="prof-card">
             <img class="prof-avatar" src="https://ui-avatars.com/api/?name=Rafael+Gardoni&background=0d3311&color=fff&size=160" alt="Prof. Rafael Gardoni">
-            <div class="prof-name">Prof. Dr. Rafael Artur de Paiva Gardoni</div>
+            <div class="prof-name">Prof. Me. Rafael Artur de Paiva Gardoni</div>
             <div class="prof-role">Professor Patrono &amp; Colaborador</div>
             <div class="prof-desc">Doutor em Engenharia. Docente do Instituto Federal Fluminense, apoiando o embasamento técnico e a viabilidade dos fluxos de triagem e logística reversa regional.</div>
             <a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni" target="_blank" rel="noopener" class="prof-link-btn">
@@ -1342,7 +1343,7 @@
   </nav>
 
   <script>
-    // BANCO DE DADOS COMPLETO COM 34 ITENS
+    // BANCO DE DADOS COMPLETO COM 65 ITENS
     const items = [
       // BATERIAS
       {
@@ -1408,6 +1409,22 @@
         prep: "Agrupe em caixa seca de papelão sem que os terminais entrem em contato direto uns com os outros.",
         dest: "Postos de coleta de pilhas e baterias do IFF ou farmácias e supermercados conveniados.",
         source: "Resolução INEA n.º 183/2019"
+      },
+      {
+        title: "Drones Recreativos, Quadricópteros e Aeromodelos (Baterias Li-Po)",
+        category: "baterias",
+        risk: "Equipados com baterias de Polímero de Lítio (Li-Po) de altíssima taxa de descarga instantânea. Em colisões, perfurações de hélice ou quedas bruscas sofrem runaway térmico com chamas químicas acima de 600°C e gases fluorados.",
+        prep: "Desconecte a bateria Li-Po do chassis da aeronave. Jamais perfure células estufadas. Isole os conectores XT60/XT30 com fita isolante e acondicione em saco antichamas (LiPo Safe Bag) ou pote metálico com areia seca.",
+        dest: "Ponto de Entrega Voluntária (PEV) de baterias no IFF Bom Jesus do Itabapoana ou oficinas credenciadas de modelismo.",
+        source: "Norma ABNT NBR 16182 / RBAC-E n.º 94 (ANAC)"
+      },
+      {
+        title: "Cigarros Eletrônicos, Pods e Vapes Descartáveis (DEF)",
+        category: "baterias",
+        risk: "Dispositivos compactos com microbateria de íon de lítio sem gerenciamento térmico robusto, associada a reservatório com resíduo de nicotina concentrada. Se descartados no lixo comum, explodem na prensa do caminhão de lixo e contaminam o chorume com alcaloides neurotóxicos.",
+        prep: "Nunca tente quebrar ou violar a carcaça de plástico ou alumínio com alicate. Vede o bocal e as entradas de ar inferiores com fita isolante para neutralizar os sensores pneumáticos e guarde em frasco plástico seco.",
+        dest: "Entregue exclusivamente em coletores de baterias no PEV do IFF Bom Jesus. Não misture com recicláveis secos comuns.",
+        source: "RDC ANVISA n.º 855/2024 / Resolução CONAMA 401/2008"
       },
 
       // PILHAS
@@ -1492,6 +1509,14 @@
         prep: "Verifique se o conector de metal não está quebrado e guarde com o cabo enrolado junto.",
         dest: "PEV do IFF para reaproveitamento em projetos de eletrônica básica.",
         source: "Plano Municipal de Resíduos Sólidos"
+      },
+      {
+        title: "Smartwatches, Pulseiras Inteligentes e Fones Bluetooth (TWS)",
+        category: "celulares",
+        risk: "Microbaterias de lítio de alta densidade seladas estruturalmente com adesivo industrial impermeável. A tentativa de abertura caseira rasga o envelope da célula causando ignição. Circuitos miniaturizados contêm ouro e tântalo que são perdidos se encaminhados a aterro.",
+        prep: "Mantenha os fones dentro do próprio estojo carregador (case). Não tente remover a bateria do relógio. Isole os contatos magnéticos de recarga traseiros com um pedaço pequeno de fita adesiva.",
+        dest: "Totens de logística reversa de telefonia celular e periféricos móveis no PEV do IFF ou lojas de operadoras.",
+        source: "Acordo Setorial de Eletroeletrônicos / Decreto Federal 10.240/2020"
       },
 
       // INFORMÁTICA E PEÇAS
@@ -1591,6 +1616,14 @@
         dest: "Pontos de logística reversa do fabricante ou entrega orientada no PEV do campus.",
         source: "Ficha de Informação de Segurança de Produtos Químicos"
       },
+      {
+        title: "Videogames Portáteis, Joysticks e Controles Sem Fio",
+        category: "informatica",
+        risk: "Acumuladores recarregáveis internos, motores vibratórios com ímãs de neodímio e placas de alta frequência. O descarte incorreto queima terras raras e plásticos de engenharia retardantes de chama bromados (BFRs).",
+        prep: "Restaure padrões de fábrica pelo sistema para apagar dados pessoais se o aparelho ainda ligar. Guarde em caixa de papelão com os cabos USB enrolados e proteja telas de LCD com papelão para evitar estilhaçamento.",
+        dest: "Ponto de Entrega Voluntária de informática do IFF Bom Jesus ou campanhas de coleta de e-lixo.",
+        source: "Norma Técnica ABNT NBR 16156 / PNRS Lei 12.305/2010"
+      },
 
       // ELETRODOMÉSTICOS
       {
@@ -1609,6 +1642,22 @@
         dest: "Associações locais de catadores de Bom Jesus ou oficinas de manutenção técnica do IFF.",
         source: "Plano Municipal de Gestão de Resíduos Sólidos"
       },
+      {
+        title: "Brinquedos Eletrônicos, Robôs Educativos e Jogos Infantis",
+        category: "eletro",
+        risk: "Frequentemente retêm pilhas alcalinas ou baterias botão esquecidas que vazam hidróxido de potássio corrosivo e inutilizam contatos. A mistura de termoplásticos diversos (ABS/PS) com fiação e alto-falantes contamina a reciclagem plástica comum.",
+        prep: "Abra o compartimento traseiro com chave philips e retire obrigatoriamente todas as pilhas ou baterias antes do descarte (encaminhe as pilhas para o coletor de pilhas). O brinquedo deve seguir desenergizado.",
+        dest: "PEV de eletroeletrônicos do IFF Bom Jesus do Itabapoana ou associações e cooperativas de reciclagem da região.",
+        source: "Portaria INMETRO n.º 302/2021 / Política Nacional de Resíduos Sólidos"
+      },
+      {
+        title: "Ferramentas Elétricas a Bateria (Parafusadeiras e Furadeiras)",
+        category: "eletro",
+        risk: "Conjuntos de células de lítio de classe industrial capazes de entregar correntes de curto-circuito superiores a 30A. Em contato acidental com pregos, ferragens ou água na caçamba, provocam arcos elétricos e incêndios pesados.",
+        prep: "Desacople o pack de bateria da carcaça plástica da ferramenta. Isole os terminais de contato com fita isolante de alta aderência. A carcaça da ferramenta (motor e mandril) e a bateria podem ser descartadas em caixas separadas.",
+        dest: "Assistências técnicas de ferramentas (Makita, Bosch, DeWalt) com logística reversa própria ou recepção técnica de eletroeletrônicos do IFF.",
+        source: "Resolução CONAMA n.º 401/2008 / Decreto Federal 10.240/2020"
+      },
 
       // LÂMPADAS
       {
@@ -1626,6 +1675,208 @@
         prep: "Mantenha a cúpula plástica ou de vidro protegida contra esmagamento.",
         dest: "Coletores de lâmpadas LED em supermercados de materiais de construção ou PEV no IFF.",
         source: "Decreto Federal n.º 10.240/2020"
+      },
+
+      // ITENS ADICIONAIS E FORA DO PEV
+      {
+        title: "Câmeras Digitais, Filmadoras e Câmeras de Segurança",
+        category: "informatica",
+        risk: "Placas com chips e baterias internas de lítio; o descarte comum dispersa metais e pode causar incêndio na triagem.",
+        prep: "Retire a bateria e o cartão de memória. Isole os contatos da bateria com fita.",
+        dest: "PEV do IFF ou lojas de fotografia com logística reversa.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Controles Remotos, Calculadoras e Relógios Digitais",
+        category: "eletro",
+        risk: "Pequenos aparelhos com placa e pilhas ou baterias de botão que acabam no lixo comum.",
+        prep: "Retire as pilhas e entregue o aparelho inteiro.",
+        dest: "PEV do IFF; as pilhas vão em recipiente separado.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Rádios, Caixas de Som e Aparelhos de DVD",
+        category: "eletro",
+        risk: "Placas, alto-falantes com ímãs e capacitores; mistura de plásticos, metais e componentes eletrônicos.",
+        prep: "Retire pilhas e cabos. Entregue inteiro e sem abrir.",
+        dest: "PEV do IFF ou entidades gestoras (ABREE e Green Eletron).",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Secadores, Chapinhas e Aparelhos de Cuidados Pessoais",
+        category: "eletro",
+        risk: "Resistências, termostatos e cabos com cobre reaproveitável; perdidos quando vão ao aterro.",
+        prep: "Entregue limpo e com o cabo enrolado sem nós.",
+        dest: "PEV do IFF ou lojas com coleta de eletroportáteis.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Cafeteiras, Fritadeiras Elétricas e Ferros de Passar",
+        category: "eletro",
+        risk: "Motores, resistências e fiação; materiais metálicos recuperáveis, mas contaminam o lixo comum com óleo e resíduos.",
+        prep: "Limpe e esvazie o aparelho antes de entregar.",
+        dest: "PEV do IFF ou pontos de entidades gestoras.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Aspiradores Robô e Escovas de Dente Elétricas",
+        category: "eletro",
+        risk: "Baterias de lítio ou níquel embutidas, difíceis de retirar, com risco de estufamento.",
+        prep: "Entregue o aparelho inteiro, sem tentar abrir a carcaça.",
+        dest: "PEV do IFF ou assistência técnica da marca.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Barbeadores e Aparadores Elétricos Recarregáveis",
+        category: "eletro",
+        risk: "Bateria interna recarregável e lâminas metálicas; risco de curto-circuito se perfurada.",
+        prep: "Desligue, entregue inteiro e com o carregador, se houver.",
+        dest: "PEV do IFF ou lojas do fabricante.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Lanternas, Luminárias de Emergência e Brinquedos com Bateria Recarregável",
+        category: "eletro",
+        risk: "Baterias de chumbo selado ou lítio de pequeno porte, com risco de vazamento e estufamento.",
+        prep: "Retire a bateria quando possível e isole os polos com fita.",
+        dest: "PEV do IFF ou comércio onde comprou.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Videogames de Mesa e Consoles",
+        category: "informatica",
+        risk: "Placas de alta densidade com metais nobres e fonte interna; valor alto de reaproveitamento.",
+        prep: "Remova discos, cartões e contas pessoais; entregue com cabos.",
+        dest: "PEV do IFF para triagem e reuso didático.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Webcams, Caixas Multimídia e Periféricos de Informática",
+        category: "informatica",
+        risk: "Placas e cabos de uso comum que, no lixo, se somam ao fluxo de e-lixo não registrado.",
+        prep: "Entregue inteiros, com os cabos enrolados.",
+        dest: "PEV do IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Carregadores de Notebook e Fontes Externas",
+        category: "informatica",
+        risk: "Transformadores com cobre, capacitores e placas; cabos de má qualidade acumulam gavetas inteiras.",
+        prep: "Enrole o cabo sem nós. Nunca queime os fios para extrair o cobre.",
+        dest: "PEV do IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Estabilizadores e Nobreaks (Sem a Bateria)",
+        category: "informatica",
+        risk: "Transformadores e placas pesadas; a bateria de chumbo-ácido interna exige descarte separado.",
+        prep: "Retire a bateria interna e entregue o equipamento separadamente.",
+        dest: "Equipamento no PEV do IFF; bateria em lojas e baterias automotivas.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "CDs, DVDs, Disquetes e Fitas Magnéticas",
+        category: "informatica",
+        risk: "Policarbonato e camadas metálicas; mídia antiga pode guardar dados pessoais.",
+        prep: "Destrua a mídia que contiver dados pessoais antes de entregar.",
+        dest: "PEV do IFF ou coleta seletiva, conforme o material.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Teclados Musicais, Pedais e Instrumentos Eletrônicos",
+        category: "eletro",
+        risk: "Placas, alto-falantes e fontes; muitos usam pilhas internas.",
+        prep: "Retire as pilhas e entregue o instrumento inteiro.",
+        dest: "PEV do IFF.",
+        source: "Decreto Federal n.º 10.240/2020"
+      },
+      {
+        title: "Painéis Solares Fotovoltaicos (Módulos Pequenos)",
+        category: "especiais",
+        risk: "Vidro, alumínio e células de silício com metais como prata e, em alguns tipos, chumbo; os módulos têm vida útil de 25 a 30 anos e se tornam passivo futuro.",
+        prep: "Não quebre o vidro nem desmonte a moldura.",
+        dest: "Fora do PEV. Procure o instalador ou fabricante, responsável pela logística reversa.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Geladeiras, Freezers e Bebedouros",
+        category: "especiais",
+        risk: "Gases refrigerantes que agridem a camada de ozônio e óleo do compressor; volume excessivo para um ponto de coleta.",
+        prep: "Não corte tubulações nem tente retirar o gás.",
+        dest: "Fora do PEV. Solicite a coleta especial da Prefeitura de Bom Jesus ou a devolução ao fabricante.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Fogões, Máquinas de Lavar e Linha Branca em Geral",
+        category: "especiais",
+        risk: "Grande volume, metais pesados e, nos fogões a gás, resíduos de combustão; exigem transporte próprio.",
+        prep: "Desconecte da rede elétrica e do gás antes de qualquer retirada.",
+        dest: "Fora do PEV. Coleta especial (cata-treco) da Prefeitura ou devolução na loja.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Aparelhos de Ar-Condicionado",
+        category: "especiais",
+        risk: "Gás refrigerante sob pressão e compressor com óleo; só técnico habilitado deve manusear.",
+        prep: "Não desmonte o aparelho por conta própria.",
+        dest: "Fora do PEV. Empresa de instalação ou assistência técnica autorizada.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Baterias Estufadas, Vazando ou Danificadas",
+        category: "especiais",
+        risk: "Risco de fuga térmica e vazamento de eletrólito; a recusa no recebimento direto do PEV é uma regra de segurança.",
+        prep: "Não toque com as mãos nuas, não perfure e não tente carregar. Coloque em recipiente incombustível com areia seca.",
+        dest: "Fora do PEV comum. Contate o IFF antes para um protocolo de contenção e transporte.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Baterias de Chumbo-Ácido em Geral (Carro, Moto e Nobreak Grande)",
+        category: "especiais",
+        risk: "Ácido sulfúrico e chumbo; neurotoxicidade crônica e corrosão imediata.",
+        prep: "Mantenha na vertical, sem inclinar nem violar a caixa.",
+        dest: "Fora do PEV comum. Devolução obrigatória às revendas automotivas.",
+        source: "Resolução CONAMA n.º 401/2008"
+      },
+      {
+        title: "Cartuchos de Tinta e Toners de Impressão",
+        category: "especiais",
+        risk: "Pós e solventes químicos que dispersam facilmente.",
+        prep: "Mantenha na embalagem original e nunca abra o cartucho.",
+        dest: "Fora do PEV. Pontos dos fabricantes (HP, Epson, Lexmark etc.).",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Lâmpadas de Vapor de Sódio e de Mercúrio",
+        category: "especiais",
+        risk: "Contêm mercúrio ou sódio e operam em alta temperatura; comuns em iluminação pública.",
+        prep: "Mantenha na embalagem e não quebre.",
+        dest: "Fora do PEV. Empresa responsável pela iluminação pública ou lojas com logística reversa.",
+        source: "Acordo Setorial de Lâmpadas / MMA"
+      },
+      {
+        title: "Termômetros e Aparelhos de Pressão com Mercúrio",
+        category: "especiais",
+        risk: "Mercúrio líquido é tóxico por inalação e contamina solo e água.",
+        prep: "Se quebrar, ventile o local e nunca varra nem use aspirador.",
+        dest: "Fora do PEV. Unidade de saúde ou vigilância sanitária.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
+      },
+      {
+        title: "Detectores de Fumaça Ionizantes (Amerício-241)",
+        category: "especiais",
+        risk: "Alguns modelos antigos contêm uma fonte radioativa de baixa atividade e não podem ir ao lixo comum.",
+        prep: "Não desmonte o detector.",
+        dest: "Fora do PEV. Fabricante ou órgão regulador de materiais radioativos (CNEN).",
+        source: "Comissão Nacional de Energia Nuclear (CNEN)"
+      },
+      {
+        title: "Lixo Hospitalar e Equipamentos Clínicos",
+        category: "especiais",
+        risk: "Risco biológico e, em alguns casos, radioativo; exige destinação por empresa licenciada.",
+        prep: "Não misture ao lixo doméstico nem leve ao PEV.",
+        dest: "Fora do PEV. Clínicas, hospitais e postos de saúde.",
+        source: "Política Nacional de Resíduos Sólidos (Lei 12.305/2010)"
       }
     ];
 
@@ -1670,7 +1921,8 @@
           celulares: "Telefonia",
           informatica: "Informática",
           eletro: "Eletrodoméstico",
-          lampadas: "Lâmpada"
+          lampadas: "Lâmpada",
+          especiais: "Fora do PEV"
         };
 
         card.innerHTML = `

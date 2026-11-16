@@ -9,7 +9,7 @@
 [![LaTeX](https://img.shields.io/badge/LaTeX-ReLaTeX-008080?style=flat&logo=latex&logoColor=white)](#tríade-documental-no-relatex)
 [![IFF](https://img.shields.io/badge/IFF-Campus%20Bom%20Jesus-1b5e20?style=flat)](https://portal1.iff.edu.br/nossos-campi/bom-jesus-do-itabapoana)
 
-Plataforma web cidadã de consulta rápida, catálogo reativo com 34 grupos de resíduos, mapa territorial de logística reversa e modelagem técnica de Ponto de Entrega Voluntária (PEV) no Instituto Federal Fluminense.
+Plataforma web cidadã de consulta rápida, catálogo reativo com 65 itens de resíduos, mapa territorial de logística reversa e modelagem técnica de Ponto de Entrega Voluntária (PEV) no Instituto Federal Fluminense.
 
 [Resumo](#resumo) · [Contexto](#contexto) · [Tecnologias](#tecnologias) · [Como usar](#como-usar) · [Catálogo](#catálogo-de-resíduos-e-baterias) · [Mapa Regional](#mapa-regional-dos-campi-do-iff) · [Autores](#autores) · [Como citar](#como-citar) · [Licença](#licença)
 
@@ -44,7 +44,7 @@ Plataforma web cidadã de consulta rápida, catálogo reativo com 34 grupos de r
 
 ## Resumo
 
-Trabalho prático integrador da disciplina Filosofia da Ciência e Tecnologia (Bacharelado em Engenharia de Computação, IFF Campus Bom Jesus do Itabapoana, 2026/2): diagnosticar o passivo ambiental de resíduos eletroeletrônicos e baterias no Noroeste Fluminense sob as teorias da responsabilidade tecnológica (Hans Jonas), da modernidade líquida e obsolescência (Zygmunt Bauman) e da filosofia da técnica (Alberto Cupani). O projeto concebeu uma solução em três frentes integradas: uma aplicação web responsiva com busca instantânea sobre 34 resíduos, a modelagem de um Ponto de Entrega Voluntária (PEV) no campus BJI amparado na Resolução INEA n.º 183/2019 com transporte homologado de 67 km até o Projeto Circuito Verde (IFF Campus Guarus), e a transferência de operação ao curso Técnico em Meio Ambiente para continuidade nas escolas municipais.
+Trabalho prático integrador da disciplina Filosofia da Ciência e Tecnologia (Bacharelado em Engenharia de Computação, IFF Campus Bom Jesus do Itabapoana, 2026/2): diagnosticar o passivo ambiental de resíduos eletroeletrônicos e baterias no Noroeste Fluminense sob as teorias da responsabilidade tecnológica (Hans Jonas), da modernidade líquida e obsolescência (Zygmunt Bauman) e da filosofia da técnica (Alberto Cupani). O projeto concebeu uma solução em três frentes integradas: uma aplicação web responsiva com busca instantânea sobre 65 itens de resíduos, a modelagem de um Ponto de Entrega Voluntária (PEV) no campus BJI amparado na Resolução INEA n.º 183/2019 com transporte homologado de 67 km até o Projeto Circuito Verde (IFF Campus Guarus), e a transferência de operação ao curso Técnico em Meio Ambiente para continuidade nas escolas municipais.
 
 ---
 
@@ -57,8 +57,8 @@ Trabalho prático integrador da disciplina Filosofia da Ciência e Tecnologia (B
 | **Curso e disciplina** | Bacharelado em Engenharia de Computação · Filosofia da Ciência e Tecnologia |
 | **Período** | 6.º período, 2026/2 |
 | **Professor Orientador** | Prof. Me. Rafael Ferreira Tardin da Silva |
-| **Professor Patrono** | Prof. Dr. Rafael Artur de Paiva Gardoni |
-| **Autores** | Bento Fernandes, Bernardo Rainha, Pedro Henrique Miranda, Pedro Henrique Rocha de Andrade |
+| **Professor Patrono** | Prof. Me. Rafael Artur de Paiva Gardoni |
+| **Autores** | Bento Fernandes, Bernardo Rainha, Pedro Henrique Miranda de Oliveira, Pedro Henrique Rocha de Andrade |
 | **Base Municipal** | Plano Municipal de Gestão Integrada de Resíduos Sólidos (PMGIRS BJI 2024) |
 
 ### Objetivos
@@ -118,7 +118,7 @@ Abra o navegador em `http://localhost:8000`. A aplicação carrega imediatamente
 
 ## Catálogo de Resíduos e Baterias
 
-O banco de dados conta com **34 itens** categorizados, detalhando para cada um o risco, a preparação obrigatória e a base legal:
+O banco de dados conta com **65 itens** categorizados, detalhando para cada um o risco, a preparação obrigatória e a base legal:
 
 | Categoria | Itens Cadastrados | Risco Principal | Preparo Recomendado |
 | :--- | :--- | :--- | :--- |
@@ -165,7 +165,7 @@ Todo o corpo de documentação foi desenvolvido e compilado no sistema **ReLaTeX
 
 | Documento | Classe / Modelo | Extensão | Estado |
 | :--- | :--- | :---: | :--- |
-| **Relatório Técnico** | `iffrelatorio` | 18 páginas | Concluído (sob avaliação da banca) |
+| **Relatório Técnico** | `iffrelatorio` | 16 páginas | Concluído (sob avaliação da banca) |
 | **Slides da Apresentação** | `iffslides` | 36 lâminas | Concluído (sob avaliação da banca) |
 | **Roteiro de Oratória** | `iffdoc` | 8 páginas | Concluído (15 min apresentação + 10 min arguição) |
 | **Panfleto Impresso (Guia A4)** | `iffdoc` | 1 página | Concluído (formato síntese TLDR com QR Code) |
@@ -213,10 +213,10 @@ guia-elixo/
 
 Projeto concluído e submetido para avaliação acadêmica em 15/11/2026.
 
-- [x] Aplicação web reativa com 34 resíduos catalogados
+- [x] Aplicação web reativa com 65 resíduos catalogados
 - [x] Mapa regional SVG integrando os campi do IFF
 - [x] Hospedagem local de PDFs do CONAMA 401 e INEA 183
-- [x] Relatório técnico de 18 páginas em `iffrelatorio`
+- [x] Relatório técnico de 16 páginas em `iffrelatorio`
 - [x] Lâminas de slides em `iffslides` e roteiro de oratória em `iffdoc`
 - [x] Panfleto impresso de 1 página com síntese visual e QR code
 
@@ -290,7 +290,7 @@ Para dúvidas e esclarecimentos sobre a pesquisa ou aplicação web, consulte [S
 <table>
   <tr>
     <td align="center" width="50%"><img src="https://ui-avatars.com/api/?name=Rafael+Tardin&background=0d3311&color=fff&size=160" width="96" height="96" alt="Prof. Rafael Tardin" /><br /><sub><b>Prof. Me. Rafael Ferreira Tardin da Silva</b></sub><br />Professor Orientador (Filosofia da Ciência e Tecnologia / IFF)<br /><a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-ferreira-tardin-da-silva/rafael%20tardin"><b>Perfil Oficial no Integra IFF</b></a></td>
-    <td align="center" width="50%"><img src="https://ui-avatars.com/api/?name=Rafael+Gardoni&background=0d3311&color=fff&size=160" width="96" height="96" alt="Prof. Rafael Gardoni" /><br /><sub><b>Prof. Dr. Rafael Artur de Paiva Gardoni</b></sub><br />Professor Patrono &amp; Colaborador (Engenharia / IFF)<br /><a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni"><b>Perfil Oficial no Integra IFF</b></a></td>
+    <td align="center" width="50%"><img src="https://ui-avatars.com/api/?name=Rafael+Gardoni&background=0d3311&color=fff&size=160" width="96" height="96" alt="Prof. Rafael Gardoni" /><br /><sub><b>Prof. Me. Rafael Artur de Paiva Gardoni</b></sub><br />Professor Patrono &amp; Colaborador (Engenharia / IFF)<br /><a href="https://integra.iff.edu.br/ecossistema/pessoas/rafael-artur-de-paiva-gardoni/Rafael%20Gardoni"><b>Perfil Oficial no Integra IFF</b></a></td>
   </tr>
 </table>
 
@@ -300,7 +300,7 @@ Para dúvidas e esclarecimentos sobre a pesquisa ou aplicação web, consulte [S
 
 ## Agradecimentos
 
-Agradecemos ao professor orientador **Prof. Me. Rafael Ferreira Tardin da Silva** pela condução crítica e metodológica, e ao professor patrono **Prof. Dr. Rafael Artur de Paiva Gardoni** pelo suporte técnico sobre a matriz de resíduos da região.
+Agradecemos ao professor orientador **Prof. Me. Rafael Ferreira Tardin da Silva** pela condução crítica e metodológica, e ao professor patrono **Prof. Me. Rafael Artur de Paiva Gardoni** pelo suporte técnico sobre a matriz de resíduos da região.
 
 ---
 
